@@ -42,6 +42,9 @@ namespace Console_Statki.Model
             PlayerMatrix pM = new PlayerMatrix();
             PlayerMatrix eM = new PlayerMatrix();
             EnenemyPlans eP = new EnenemyPlans();
+
+            Methods.EnterNicknameP1();
+
            
             PlaceShips(pM);
             EnemyPlaceShips(eM);
@@ -113,7 +116,7 @@ namespace Console_Statki.Model
                     {
                         game = false;
                         Methods.SetCursor(28, 18);
-                        Console.Write(Const.PLAYER_NICKNAME);
+                        Console.Write(Variable.PLAYER1_NICKNAME);
                         Console.Write(" wygrał!!!!");
                     }
 
@@ -133,8 +136,8 @@ namespace Console_Statki.Model
             PlaceShips(pM);
             Console.Read();
             PlaceShips(eM);
-            
-           Console.Read();
+
+            Console.Read();
             while (game)
             {
                 if (turn == false)
@@ -159,7 +162,7 @@ namespace Console_Statki.Model
                         turn = false;
                 }
 
-               
+
                 int count = 0;
                 for (int i = 0; i < 10; i++)
                 {
@@ -194,7 +197,7 @@ namespace Console_Statki.Model
                     {
                         game = false;
                         Methods.SetCursor(28, 18);
-                        Console.Write(Const.PLAYER_NICKNAME);
+                        Console.Write(Variable.PLAYER1_NICKNAME);
                         Console.Write(" wygrał!!!!");
                     }
 
@@ -207,10 +210,26 @@ namespace Console_Statki.Model
 
         public static PlayerMatrix PlaceShips(PlayerMatrix pM)
         {
-            pM = PlaceShip(4, pM);
-            for (int i = 0; i < 2; i++) pM = PlaceShip(3, pM);
-            for (int i = 0; i < 3; i++) pM = PlaceShip(2, pM);
-            for (int i = 0; i < 4; i++) pM = PlaceShip(1, pM);
+            for (int i = 1; i <= 1; i++)
+            {
+                pM = PlaceShip(4, pM);
+                Variable.CZTEROMASZTOWCE = 1 - i;
+            }
+            for (int i = 1; i <= 2; i++)
+            {
+                pM = PlaceShip(3, pM);
+                Variable.TRZYMASZTOWCE = 2 - i;
+            }
+            for (int i = 1; i <= 3; i++)
+            {
+                pM = PlaceShip(2, pM);
+                Variable.DWUMASZTOWCE = 3 - 1;
+            }
+            for (int i = 1; i <= 4; i++)
+            {
+                pM = PlaceShip(1, pM);
+                Variable.JEDNOMASZTOWIEC = 4 - 1;
+            }
 
             return pM;
         }
@@ -273,7 +292,7 @@ namespace Console_Statki.Model
             Methods.CreateScreen(pM);
 
             Methods.SetCursor(23, 3);
-            while (true) 
+            while (true)
             {
                 string selected = Console.ReadKey().Key.ToString();
                 if (selected == "Enter")

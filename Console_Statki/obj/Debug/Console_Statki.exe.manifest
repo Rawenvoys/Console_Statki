@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="43008">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="43520">
       <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RL7FESJnmyRjUkrKJ7aV5Skjb5CQHP4Z/fh+q1xUktQ=</dsig:DigestValue>
+        <dsig:DigestValue>npMbO9gbavv2QKahWKTR/UVKBYxpc4QWJYAFuCFXmmY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

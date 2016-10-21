@@ -14,7 +14,8 @@ namespace Console_Statki
     {
         public static void Main(string[] args)
         {
-            //Console.CursorVisible = false;
+            //Console.CursorVisible = false; //NA RAZIE
+
             //Main screen do przeniesienia
             //Methods.ShowStartScreen();
             //Const.PLAYER_NICKNAME = Console.ReadLine();

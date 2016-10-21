@@ -63,6 +63,15 @@ namespace Console_Statki.Helper
             }
         }
 
+        public static void EnterNicknameP1()
+        {
+            Methods.SetCursor(0, 4);
+            Console.WriteLine(Messages.WELCOME_TEXT);
+            Methods.SetCursor(33, 6);
+            Variable.PLAYER1_NICKNAME = Console.ReadLine();
+            Console.Clear();
+        }
+
         public static void SetCursor(int x, int y)
         {
             try
@@ -420,44 +429,12 @@ namespace Console_Statki.Helper
 
             try
             {
-                //SetCursor(0, 0);
-                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
-                //#region MID_FRAME
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //#endregion
-                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                SetCursor(Const.MENU_NICKNAME_X, Const.MENU_NICKNAME_Y);
+                Console.WriteLine(Variable.PLAYER1_NICKNAME);
+                SetCursor(Const.MENU_SET_X, Const.MENU_SET_Y);
+                Console.WriteLine(Messages.SET_SHIP_MESSAGE);
 
-
+                #region MATRIX
                 SetCursor(Const.MATRIX_X, Const.MATRIX_Y);
                 for (int i = 0; i < 10; i++)
                 {
@@ -482,11 +459,18 @@ namespace Console_Statki.Helper
                                     Console.Write("~ ");
                                 }
                     }
-                    SetCursor(Const.MATRIX_X, i + 4);
+                    SetCursor(Const.MATRIX_X, Const.MATRIX_Y + i + 1);
                 }
+                #endregion
+
+             
+
                 //Rysuje macierz i od razu komunikat
-                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP);
-                SetCursor(Const.MATRIX_X, Const.MATRIX_Y-1);
+                //Console.WriteLine(Variable.CZTEROMASZTOWCE);
+                //Console.WriteLine(Messages.CONTROLS_PLACE_SHIP);
+
+
+                SetCursor(Const.MATRIX_X, Const.MATRIX_Y);
 
             }
             catch
