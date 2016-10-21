@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Console_Statki.Helper;
 using Console_Statki.Model;
 using System.Windows;
+using Console_Statki;
 
 
 namespace Console_Statki.Helper
@@ -89,52 +90,61 @@ namespace Console_Statki.Helper
         {
             try
             {
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
-                #region MID_FRAME
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                #endregion
+           
+                Methods.SetCursor(19, 3);
+                Console.Write(Messages.SHIP);
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //#region MID_FRAME
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //#endregion
                 Console.WriteLine(Messages.MENU_TEXT);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
+                Console.Write("\n");
+           
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_NEW_GAME);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-                Console.WriteLine(Messages.MID_FRAME);
+             
+                //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_NEW_GAME_2_PLAYERS);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-                Console.WriteLine(Messages.MID_FRAME);
+             
+                //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_HIGHSCORES);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-                Console.WriteLine(Messages.MID_FRAME);
+           
+                //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_CLOSE);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-                #region MID_FRAME
+      
+                //#region MID_FRAME
                
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                #endregion
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //#endregion
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
                 SetCursor(x, y);
                 ColorText(textToColor);
 
@@ -152,47 +162,44 @@ namespace Console_Statki.Helper
 
             if (selected == "UpArrow")
             {
-                if (y > 14)
+                if (y > 12)
                 {
-                    if (y == 20)
+                    if (y == 15)
                     {
-                        Console.Clear();
-                        ShowMenuScreen(28, y - 2, Messages.MENU_HIGHSCORES);
+                        ShowMenuScreen(25, y - 1, Messages.MENU_HIGHSCORES);
+                    }
+                    else
+                    if (y == 14)
+                    {
+
+                        ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME_2_PLAYERS);
 
                     }
                     else
-                    if (y == 18)
                     {
-                        Console.Clear();
-                        ShowMenuScreen(28, y - 2, Messages.MENU_NEW_GAME_2_PLAYERS);
-
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        ShowMenuScreen(28, y - 2, Messages.MENU_NEW_GAME);
+                   
+                        ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME);
                     }
                 }
             }
             if (selected == "DownArrow")
             {
-                if (y < 20)
+                if (y < 15)
                 {
-                    if (y == 14)
+                    if (y == 12)
                     {
-                        Console.Clear();
-                        ShowMenuScreen(28, y + 2, Messages.MENU_NEW_GAME_2_PLAYERS);
+                        
+                        ShowMenuScreen(25, y + 1, Messages.MENU_NEW_GAME_2_PLAYERS);
                     }
                     else
-                    if (y == 16)
+                    if (y == 13)
                     {
-                        Console.Clear();
-                        ShowMenuScreen(28, y + 2, Messages.MENU_HIGHSCORES);
+                    
+                        ShowMenuScreen(25, y + 1, Messages.MENU_HIGHSCORES);
                     }
                     else
                     {
-                        Console.Clear();
-                        ShowMenuScreen(28, y + 2, Messages.MENU_CLOSE);
+                        ShowMenuScreen(25, y + 1, Messages.MENU_CLOSE);
                     }
                 }
             }
@@ -234,45 +241,45 @@ namespace Console_Statki.Helper
         {
             try
             {
-                SetCursor(0, 0);
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
-                #region MID_FRAME
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                #endregion
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //SetCursor(0, 0);
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //#region MID_FRAME
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //#endregion
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
 
                 Console.WriteLine(Messages.CONTROLS);
-                SetCursor(23, 3);
+                SetCursor(Const.MENU_X, Const.MENU_Y);
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)
@@ -299,9 +306,9 @@ namespace Console_Statki.Helper
                                 else
                                     Console.Write("~ ");
                     }
-                    SetCursor(23, i + 4);
+                    SetCursor(Const.MENU_X, i + 4);
                 }
-                SetCursor(23, 3);
+                SetCursor(Const.MENU_X, Const.MENU_Y);
                 if (x != 0 && y != 0)
                 {
                     ColorPosition(x, y, pM);
@@ -413,45 +420,45 @@ namespace Console_Statki.Helper
 
             try
             {
-                SetCursor(0, 0);
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
-                #region MID_FRAME
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                Console.WriteLine(Messages.MID_FRAME);
-                #endregion
-                Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //SetCursor(0, 0);
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                //#region MID_FRAME
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //Console.WriteLine(Messages.MID_FRAME);
+                //#endregion
+                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
 
-                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP);
-                SetCursor(23, 3);
+
+                SetCursor(Const.MATRIX_X, Const.MATRIX_Y);
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)
@@ -475,9 +482,11 @@ namespace Console_Statki.Helper
                                     Console.Write("~ ");
                                 }
                     }
-                    SetCursor(23, i + 4);
+                    SetCursor(Const.MATRIX_X, i + 4);
                 }
-                SetCursor(23, 3);
+                //Rysuje macierz i od razu komunikat
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP);
+                SetCursor(Const.MATRIX_X, Const.MATRIX_Y-1);
 
             }
             catch

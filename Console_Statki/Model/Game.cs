@@ -42,11 +42,11 @@ namespace Console_Statki.Model
             PlayerMatrix pM = new PlayerMatrix();
             PlayerMatrix eM = new PlayerMatrix();
             EnenemyPlans eP = new EnenemyPlans();
-
+           
             PlaceShips(pM);
             EnemyPlaceShips(eM);
             Methods.CreateScreen(eM);
-            //   Console.Read();
+            //Console.Read();
             while (game)
             {
                 if (turn == false)
