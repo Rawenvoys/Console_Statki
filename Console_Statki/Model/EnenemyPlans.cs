@@ -167,7 +167,8 @@ namespace Console_Statki.Model
               State[10] = point + 20;
               State[11] = point + 30;*/
             for (int i = 0; i < 12; i++ )
-                State[i] = new Coordinate();
+            State[i] = new Coordinate();
+
             State[0].X = point / 10 - 1;
             State[0].Y = point % 10;
             State[1].X = point / 10;
@@ -192,7 +193,6 @@ namespace Console_Statki.Model
             State[10].Y = point % 10;
             State[11].X = point / 10 + 3;
             State[11].Y = point % 10;
-
 
             Matrix[0, 0] = 1;
             Matrix[0, 1] = 2;
