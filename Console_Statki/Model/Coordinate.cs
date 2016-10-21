@@ -16,9 +16,5 @@ namespace Console_Statki.Model
             X = point / 10;
             Y = point % 10;
         }
-        public Coordinate()
-        {
-                
-        }
     }
 }

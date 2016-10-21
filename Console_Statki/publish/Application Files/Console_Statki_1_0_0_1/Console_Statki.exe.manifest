@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Console_Statki.exe" version="1.0.0.1" publicKeyToken="832203bee6547a94" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Console_Statki.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="4096">
+      <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>w2bWvZzIhEydkHtskU1sTaTV3XmR+dmkS8Qan4XMME8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Console_Statki.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=Kacper-PC\Kacper" issuerKeyHash="3c143850fca584d1a868929f470f5965cd716ad6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vB34SDqTAUFEnqu39IVoGfoEQ9lGQQCNusU5TWZVspk=</DigestValue></Reference></SignedInfo><SignatureValue>PgP+CBKhRUjarJJI6ODLQ7ZFvw6npDDUR/7e5C47mNymFXWRyK/2/INFeQhafL5if2soK397lQHaFizsWPH2czCSAhL5AhaJIynhX+PzPOj9WOrvrs2FXj+7E0lJaEBMXtV8NoF3Qg7XX9vG5jMcfK7XCBWtr8cQ7AgBMCXzh9w=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>pXosJyNyFZDZ/UGTu8heHPWUvWdEtschTic1m9r+BHpsLxNWLfPQu0TjdEkLM2WRFQ2hQZGSagqpVrtnQz1hyCoiqjkWlhZ8vnH3lc1KPv4NZ7leV/WJlFNmXi5ehkfLvf+tt+KpDSRsPDlZUfN5ekCrmgQldcr7SCHDqpqRlY8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="99b255664d39c5ba8d004146d94304fa196885f4b7ab9e444101933a48f81dbc" Description="" Url=""><as:assemblyIdentity name="Console_Statki.exe" version="1.0.0.1" publicKeyToken="832203bee6547a94" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Kacper-PC\Kacper</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Db1ksrBhbEOFYqL+LxVaVmC10blBpTF4EQJ51fbu9gE=</DigestValue></Reference></SignedInfo><SignatureValue>MssZrJQOx/C1IVL3q6nNf1zK7uaLs2kuWFnzVg+LUsfHD0NSapfsCkztnQrqGq1KK1RCBTkJjLvoX2Jwv45AuAavj5LX9v9tOElIbYxn0Qv+FiGJoXQTPCS1w8O3tLlNh+KJhHnykpT6GGX0YUII45K+7xI6l5w1OTgJdluCQBY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>pXosJyNyFZDZ/UGTu8heHPWUvWdEtschTic1m9r+BHpsLxNWLfPQu0TjdEkLM2WRFQ2hQZGSagqpVrtnQz1hyCoiqjkWlhZ8vnH3lc1KPv4NZ7leV/WJlFNmXi5ehkfLvf+tt+KpDSRsPDlZUfN5ekCrmgQldcr7SCHDqpqRlY8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQT0u/lvZkf5dOWvI0MiBBWDANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAASwBhAGMAcABlAHIALQBQAEMAXABLAGEAYwBwAGUAcjAeFw0xNjA5MzAwOTQ2MTVaFw0xNzA5MzAxNTQ2MTVaMCsxKTAnBgNVBAMeIABLAGEAYwBwAGUAcgAtAFAAQwBcAEsAYQBjAHAAZQByMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCleiwnI3IVkNn9QZO7yF4c9ZS9Z0S2xyFOJzWb2v4EemwvE1Yt89C7RON0SQszZZEVDaFBkZJqCqlWu2dDPWHIKiKqORaWFny+cfeVzUo+/g1nuV5X9YmUU2ZeLl6GR8u9/6234qkNJGw8OVlR83l6QKuaBCV1yvtIIcOqmpGVjwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAJscR9AUa67qTCHN70K5JLF4xVi+FVNarw/OmJnUoPuz5nT5gVggZbFppOgozn1ZsXiuBkphiygsuLNMzpu9lzDpq2Nh5OpYQQDV4R0UwRwWFjxnXc2OTqxIQWvSiy4sEYEmB4JXmCppAcWevqubzsqdIDMVMuX0GkaR8vhqKLVj</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

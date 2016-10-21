@@ -1,0 +1,47 @@
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+D:\pracownia\wpf projekty\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+C:\Users\Lucato\Documents\Visual Studio 2013\Projects\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application
+C:\Users\Kacper\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application
+C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb

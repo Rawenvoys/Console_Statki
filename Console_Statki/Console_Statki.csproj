@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Coordinate.cs" />
+    <Compile Include="Model\EnemyMatrix.cs" />
     <Compile Include="Model\EnenemyPlans.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Highscore.cs" />
