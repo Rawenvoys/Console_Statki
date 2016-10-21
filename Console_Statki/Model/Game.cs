@@ -49,14 +49,14 @@ namespace Console_Statki.Model
             PlaceShips(pM);
             EnemyPlaceShips(eM);
             Methods.CreateScreen(eM);
-            
+            //W GAME SCREEN ZROBIC 2 OBRAZY
             while (game)
             {
                 if (turn == false)
                 {
                     eM = Methods.PlaceBomb(eM);
                     Methods.GameScreen(0, 0, eM);
-                    Console.Read();
+             
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
                         turn = false;
                     else
@@ -68,7 +68,7 @@ namespace Console_Statki.Model
                     coordinate = eP.Shoot(hit, pM);
                     pM = ShootEnemy(pM, coordinate.X, coordinate.Y);
                     Methods.GameScreen(0, 0, pM);
-                    Console.Read();
+     
                     if (pM.playerMatrix[coordinate.X, coordinate.Y] == 999 || pM.playerMatrix[coordinate.X, coordinate.Y] == 321)
                         turn = true;
                     else

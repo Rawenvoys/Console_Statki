@@ -324,9 +324,9 @@ namespace Console_Statki.Helper
                 string selected = Console.ReadKey().Key.ToString();
                 if (selected == "Enter")
                 {
-                    if (pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 123 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 321 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_Y] == 999)
+                    if (pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 123 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 321 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 999)
                     {
-                        SetCursor(0,23);
+                        SetCursor(0,34);
                         Console.Write(Messages.SET_BOMB_ALERT);
                         SetCursor(y, x);
                     }
