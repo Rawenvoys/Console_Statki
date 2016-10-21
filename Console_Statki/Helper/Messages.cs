@@ -20,11 +20,20 @@ namespace Console_Statki.Helper
         public static string MENU_NEW_GAME_2_PLAYERS = "Rozpocznij nową grę z graczem   ";
         public static string MENU_HIGHSCORES =         "Highscores                      ";
         public static string MENU_CLOSE =              "Zakończ grę                     ";
+        public static string CONTROL = "STEROWANIE:";
         public static string CONTROLS = "Używaj \u2191 \u2190 \u2192 \u2193 aby wybrać pozycję do ostrzału. Zatwierdź ją klikając Enter\n&-Zatopiony \n*-Pudło \n$-Trafiony \n~-Nie Odkryte ";
-        public static string CONTROLS_PLACE_SHIP = "Używaj \u2191 \u2190 \u2192 \u2193 aby wybrać pozycję Statku. Zatwierdź ją klikając Enter\n&-Zatopiony \n*-Pudło \n$-Trafiony \n~-Nie Odkryte ";
+
+        public static string CONTROLS_PLACE_SHIP_UP = "\u2191 - przemieść statek w górę";
+        public static string CONTROLS_PLACE_SHIP_DOWN = "\u2193 - przemieść statek w dół";
+        public static string CONTROLS_PLACE_SHIP_LEFT = "\u2190 - przemieść statek w lewo";
+        public static string CONTROLS_PLACE_SHIP_RIGHT = "\u2192 - przemieść statek w prawo";
+        public static string CONTROLS_PLACE_SHIP_F1 = "F1 - dokonaj rotacji o 90 stopni";
+        public static string CONTROLS_PLACE_SHIP_ENTER = "ENTER - zatwierdź pozycję statku";
+
         public static string GAME_SCREEN_ALERT = "Wystąpił błąd ekranu gry!"; 
         public static string MENU_ALERT = "Nie udało się poprawnie wyświetlić Menu";
-        public static string SET_ALERT = "\nUstawienie w tej pozycji statku jest rzeczą awykonalną! Przekieruj swój \nkrążownik na inne koordynaty.";
+        public static string SET_ALERT = "Ustawienie w tej pozycji statku jest rzeczą awykonalną!";
+        public static string SET_ALERT2 = "Przekieruj swój krążownik na inne koordynaty";
         public static string SET_BOMB_ALERT = "\n nie możesz postawić bomby w tym samym miejscu";
         public static string CREATE_SCREEN_ALERT = "\nBłąd Create Screen";
         public static string GIRL_PART1 = "                         8888  8888888\n                  888888888888888888888888\n               8888:::8888888888888888888888888\n             8888::::::8888888888888888888888888888\n            88::::::::888:::8888888888888888888888888\n          88888888::::8:::::::::::88888888888888888888\n        888 8::888888::::::::::::::::::88888888888   888\n           88::::88888888::::m::::::::::88888888888    8\n         888888888888888888:M:::::::::::8888888888888\n        88888888888888888888::::::::::::M88888888888888\n        8888888888888888888888:::::::::M8888888888888888\n         8888888888888888888888:::::::M888888888888888888\n        8888888888888888::88888::::::M88888888888888888888\n      88888888888888888:::88888:::::M888888888888888   8888\n     88888888888888888:::88888::::M::;o*M*o;888888888    88\n    88888888888888888:::8888:::::M:::::::::::88888888    8\n   88888888888888888::::88::::::M:;:::::::::::888888888     \n  8888888888888888888:::8::::::M::aAa::::::::M8888888888       8\n  88   8888888888::88::::8::::M:::::::::::::888888888888888 8888\n 88  88888888888:::8:::::::::M::::::::::;::88:88888888888888888\n 8  8888888888888:::::::::::M::''@@@@@@@''::::8w8888888888888888\n ";
@@ -33,3 +42,6 @@ namespace Console_Statki.Helper
         public static string SET_SHIP_MESSAGE = "ROZMIEŚC SWOJE STATKI";
     }
 }
+
+
+

@@ -49,7 +49,7 @@ namespace Console_Statki.Model
             PlaceShips(pM);
             EnemyPlaceShips(eM);
             Methods.CreateScreen(eM);
-            //Console.Read();
+            
             while (game)
             {
                 if (turn == false)
@@ -210,6 +210,7 @@ namespace Console_Statki.Model
 
         public static PlayerMatrix PlaceShips(PlayerMatrix pM)
         {
+          
             for (int i = 1; i <= 1; i++)
             {
                 pM = PlaceShip(4, pM);
@@ -223,12 +224,12 @@ namespace Console_Statki.Model
             for (int i = 1; i <= 3; i++)
             {
                 pM = PlaceShip(2, pM);
-                Variable.DWUMASZTOWCE = 3 - 1;
+                Variable.DWUMASZTOWCE = 3 - i;
             }
             for (int i = 1; i <= 4; i++)
             {
                 pM = PlaceShip(1, pM);
-                Variable.JEDNOMASZTOWIEC = 4 - 1;
+                Variable.JEDNOMASZTOWIEC = 4 - i;
             }
 
             return pM;
@@ -299,8 +300,10 @@ namespace Console_Statki.Model
                 {
                     if (!CheckAllPosition(pM))
                     {
-                        Methods.SetCursor(0, 34);
+                        Methods.SetCursor(15, Const.MENU_CONTROL_Y+10);
                         Console.WriteLine(Messages.SET_ALERT);
+                        Methods.SetCursor(23, Const.MENU_CONTROL_Y + 11);
+                        Console.WriteLine(Messages.SET_ALERT2);
                     }
                     else
                     {

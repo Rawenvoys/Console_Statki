@@ -99,7 +99,7 @@ namespace Console_Statki.Helper
         {
             try
             {
-           
+
                 Methods.SetCursor(19, 3);
                 Console.Write(Messages.SHIP);
                 //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
@@ -117,30 +117,30 @@ namespace Console_Statki.Helper
                 //#endregion
                 Console.WriteLine(Messages.MENU_TEXT);
                 Console.Write("\n");
-           
+
                 //Console.WriteLine(Messages.MID_FRAME);
                 //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_NEW_GAME);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-             
+
                 //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_NEW_GAME_2_PLAYERS);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-             
+
                 //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_HIGHSCORES);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-           
+
                 //Console.WriteLine(Messages.MID_FRAME);
                 Console.Write(Messages.MENU_FIRST_PART);
                 Console.Write(Messages.MENU_CLOSE);
                 Console.WriteLine(Messages.MENU_SECOND_PART);
-      
+
                 //#region MID_FRAME
-               
+
                 //Console.WriteLine(Messages.MID_FRAME);
                 //Console.WriteLine(Messages.MID_FRAME);
                 //Console.WriteLine(Messages.MID_FRAME);
@@ -178,17 +178,17 @@ namespace Console_Statki.Helper
                         ShowMenuScreen(25, y - 1, Messages.MENU_HIGHSCORES);
                     }
                     else
-                    if (y == 14)
-                    {
+                        if (y == 14)
+                        {
 
-                        ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME_2_PLAYERS);
+                            ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME_2_PLAYERS);
 
-                    }
-                    else
-                    {
-                   
-                        ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME);
-                    }
+                        }
+                        else
+                        {
+
+                            ShowMenuScreen(25, y - 1, Messages.MENU_NEW_GAME);
+                        }
                 }
             }
             if (selected == "DownArrow")
@@ -197,19 +197,19 @@ namespace Console_Statki.Helper
                 {
                     if (y == 12)
                     {
-                        
+
                         ShowMenuScreen(25, y + 1, Messages.MENU_NEW_GAME_2_PLAYERS);
                     }
                     else
-                    if (y == 13)
-                    {
-                    
-                        ShowMenuScreen(25, y + 1, Messages.MENU_HIGHSCORES);
-                    }
-                    else
-                    {
-                        ShowMenuScreen(25, y + 1, Messages.MENU_CLOSE);
-                    }
+                        if (y == 13)
+                        {
+
+                            ShowMenuScreen(25, y + 1, Messages.MENU_HIGHSCORES);
+                        }
+                        else
+                        {
+                            ShowMenuScreen(25, y + 1, Messages.MENU_CLOSE);
+                        }
                 }
             }
         }
@@ -219,16 +219,16 @@ namespace Console_Statki.Helper
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.White;
             SetCursor(x, y);
-            
-            if (pM.playerMatrix[(x - 23) / 2, y - 3] == 999)
+
+            if (pM.playerMatrix[(x - Const.EM_X) / 2, y - Const.EM_Y] == 999)
             {
                 Console.Write("&");
             }
             else
-                if (pM.playerMatrix[(x - 23) / 2, y - 3] == 123)
+                if (pM.playerMatrix[(x - Const.EM_X) / 2, y - Const.EM_Y] == 123)
                     Console.Write("*");
                 else
-                    if (pM.playerMatrix[(x - 23) / 2, y - 3] == 321)
+                    if (pM.playerMatrix[(x - Const.EM_X) / 2, y - Const.EM_Y] == 321)
                         Console.Write("$");
                     else
                         Console.Write("~");
@@ -248,47 +248,18 @@ namespace Console_Statki.Helper
 
         public static void GameScreen(int x, int y, PlayerMatrix pM)
         {
+            //DA FAK
             try
             {
-                //SetCursor(0, 0);
-                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
-                //#region MID_FRAME
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //Console.WriteLine(Messages.MID_FRAME);
-                //#endregion
-                //Console.WriteLine(Messages.UPPER_LOWER_FRAME);
+                Console.Clear();
 
-                Console.WriteLine(Messages.CONTROLS);
-                SetCursor(Const.MENU_X, Const.MENU_Y);
+                SetCursor(Const.NICKNAME1_X + (20 - Variable.PLAYER1_NICKNAME.Length) / 2 , Const.NICKNAME1_Y);
+                Console.WriteLine(Variable.PLAYER1_NICKNAME);
+
+
+
+
+                SetCursor(Const.EM_X, Const.EM_Y);
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)
@@ -315,9 +286,9 @@ namespace Console_Statki.Helper
                                 else
                                     Console.Write("~ ");
                     }
-                    SetCursor(Const.MENU_X, i + 4);
+                    SetCursor(Const.EM_X, Const.EM_Y + i + 1);
                 }
-                SetCursor(Const.MENU_X, Const.MENU_Y);
+                SetCursor(Const.EM_X, Const.EM_Y);
                 if (x != 0 && y != 0)
                 {
                     ColorPosition(x, y, pM);
@@ -341,34 +312,34 @@ namespace Console_Statki.Helper
 
         public static PlayerMatrix PlaceBomb(PlayerMatrix pM)
         {
-            int x = 23;
-            int trueX = 23;
-            int y = 3;
+            int x = Const.EM_X ;
+            int trueX = Const.EM_X;
+            int y = Const.EM_Y;
             ColorPosition(x, y, pM);
             GameScreen(x, y, pM);
 
             Console.TreatControlCAsInput = true;
-            while (true) 
+            while (true)
             {
                 string selected = Console.ReadKey().Key.ToString();
                 if (selected == "Enter")
                 {
-                    if (pM.playerMatrix[y - 3, trueX - 23] == 123 || pM.playerMatrix[y - 3, trueX - 23] == 321 || pM.playerMatrix[y - 3, trueX - 23] == 999)
+                    if (pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 123 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 321 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_Y] == 999)
                     {
-                        SetCursor(0, 34);
+                        SetCursor(0,23);
                         Console.Write(Messages.SET_BOMB_ALERT);
                         SetCursor(y, x);
                     }
                     else
                     {
-                        pM = Game.Shoot(pM, y - 3, /*(x - 23) / 2*/trueX - 23);
+                        pM = Game.Shoot(pM, y - Const.EM_Y, /*(x - 23) / 2*/trueX - Const.EM_X);
                         GameScreen(x, y, pM);
                         break;
                     }
                 }
                 if (selected == "UpArrow")
                 {
-                    if (y > 3)
+                    if (y > 5)
                     {
                         y = y - 1;
                         GameScreen(x, y, pM);
@@ -381,7 +352,7 @@ namespace Console_Statki.Helper
                 if (selected == "DownArrow")
                 {
 
-                    if (y < 12)
+                    if (y < 14)
                     {
                         y = y + 1;
                         GameScreen(x, y, pM);
@@ -394,7 +365,7 @@ namespace Console_Statki.Helper
                 if (selected == "RightArrow")
                 {
 
-                    if (x < 40)
+                    if (x < 35)
                     {
                         x = x + 2;
                         trueX++;
@@ -408,7 +379,7 @@ namespace Console_Statki.Helper
                 if (selected == "LeftArrow")
                 {
 
-                    if (x > 23)
+                    if (x > 18)
                     {
                         trueX--;
                         x = x - 2;
@@ -425,15 +396,13 @@ namespace Console_Statki.Helper
 
         public static void CreateScreen(PlayerMatrix pM)
         {
-
-
             try
             {
+                Console.Clear();
                 SetCursor(Const.MENU_NICKNAME_X, Const.MENU_NICKNAME_Y);
                 Console.WriteLine(Variable.PLAYER1_NICKNAME);
                 SetCursor(Const.MENU_SET_X, Const.MENU_SET_Y);
                 Console.WriteLine(Messages.SET_SHIP_MESSAGE);
-
                 #region MATRIX
                 SetCursor(Const.MATRIX_X, Const.MATRIX_Y);
                 for (int i = 0; i < 10; i++)
@@ -462,16 +431,30 @@ namespace Console_Statki.Helper
                     SetCursor(Const.MATRIX_X, Const.MATRIX_Y + i + 1);
                 }
                 #endregion
+                SetCursor(Const.LOST_SHIP_X, Const.LOST_SHIP_Y1);
+                Console.WriteLine(Variable.CZTEROMASZTOWCE + " - ####");
+                SetCursor(Const.LOST_SHIP_X, Const.LOST_SHIP_Y2);
+                Console.WriteLine(Variable.TRZYMASZTOWCE + " - ###");
+                SetCursor(Const.LOST_SHIP_X, Const.LOST_SHIP_Y3);
+                Console.WriteLine(Variable.DWUMASZTOWCE + " - ##");
+                SetCursor(Const.LOST_SHIP_X, Const.LOST_SHIP_Y4);
+                Console.WriteLine(Variable.JEDNOMASZTOWIEC + " - #");
 
-             
-
-                //Rysuje macierz i od razu komunikat
-                //Console.WriteLine(Variable.CZTEROMASZTOWCE);
-                //Console.WriteLine(Messages.CONTROLS_PLACE_SHIP);
-
-
+                SetCursor(Const.MENU_CONTROL_X, Const.MENU_CONTROL_Y);
+                Console.WriteLine(Messages.CONTROL);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 1);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_UP);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 2);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_DOWN);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 3);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_LEFT);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 4);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_RIGHT);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 5);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_F1);
+                SetCursor(Const.MENU_CONTROL_X - 10, Const.MENU_CONTROL_Y + 6);
+                Console.WriteLine(Messages.CONTROLS_PLACE_SHIP_ENTER);
                 SetCursor(Const.MATRIX_X, Const.MATRIX_Y);
-
             }
             catch
             {
