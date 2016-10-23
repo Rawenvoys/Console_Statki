@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Threading.Tasks;
 using Console_Statki.Helper;
+using System.Threading;
 
 
 namespace Console_Statki.Model
@@ -55,8 +56,10 @@ namespace Console_Statki.Model
                 if (turn == false)
                 {
                     eM = Methods.PlaceBomb(eM);
+           
                     Methods.GameScreen(0, 0, eM);
-             
+                 //Tu były console.ready
+                    
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
                         turn = false;
                     else
@@ -67,8 +70,10 @@ namespace Console_Statki.Model
                 {
                     coordinate = eP.Shoot(hit, pM);
                     pM = ShootEnemy(pM, coordinate.X, coordinate.Y);
+           
                     Methods.GameScreen(0, 0, pM);
-     
+                    //Tu były console.ready
+                    
                     if (pM.playerMatrix[coordinate.X, coordinate.Y] == 999 || pM.playerMatrix[coordinate.X, coordinate.Y] == 321)
                         turn = true;
                     else

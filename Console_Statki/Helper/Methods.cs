@@ -294,6 +294,11 @@ namespace Console_Statki.Helper
                     ColorPosition(x, y, pM);
                 }
 
+
+
+
+
+
                 //SetCursor(0, 50);
                 //for(int i=0 ;i<10;i++)  //pokazuje jak jest zapisana macierz w pamięci i jest chujowo po 1 strzale
                 //{
