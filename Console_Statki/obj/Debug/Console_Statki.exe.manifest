@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="48640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="80896">
       <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bvvE9ECn8RHfFXz+zSrkNTA22l5pjc71NtB47k3PGz4=</dsig:DigestValue>
+        <dsig:DigestValue>WLKx7ioZbnRYq3jCQiIlR08Dg6jRK3kFV96RZJ1p99M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Console_Statki.exe.config" size="187">
+  <file name="Console_Statki.exe.config" size="555">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+      <dsig:DigestValue>pl1zcPdHwUpEOe8LFQez06AHl5DTeSzQDbt2SnNRP2U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Data\Highscore.mdf" size="3211264" writeableType="applicationData">
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Hc/wtQxPuJr5JCrhRfF9IXQPGIuyuv3WtoF7JFIxtgs=</dsig:DigestValue>
+      <dsig:DigestValue>9M8hW92kr8I4VsrNx2JUsdf1vmtOrbVj+/DW4+7xPxc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Data\Highscore_log.ldf" size="802816" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>acYJ349TQGAWD+c2dvd4gSMUyy8dajX2QPC7EMiPPac=</dsig:DigestValue>
+      <dsig:DigestValue>XGzn0rhC5Jlhwg5ofpuhhdjGHDiqK2+ntvryoD367L0=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

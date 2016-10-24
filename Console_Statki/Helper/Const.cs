@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+
 
 namespace Console_Statki.Helper
 {
@@ -41,6 +43,10 @@ namespace Console_Statki.Helper
         public static int VS_X = 42; //?
         public static int VS_Y = 3;
 
+        public static string SELECT_ALL = "SELECT * FROM Winners ORDER BY Score ASC";
+
+
+       
 
     }
 }

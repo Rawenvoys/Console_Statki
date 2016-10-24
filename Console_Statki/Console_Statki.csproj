@@ -77,7 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Variable.cs" />
+    <Compile Include="HighscoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HighscoreDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\Coordinate.cs" />
+    <Compile Include="Model\DAL\HighscoreModel.cs" />
     <Compile Include="Model\EnemyMatrix.cs" />
     <Compile Include="Model\EnenemyPlans.cs" />
     <Compile Include="Model\Game.cs" />
@@ -88,11 +94,31 @@
     <Compile Include="Model\PlayerMatrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Console_Statki_TemporaryKey.pfx" />
+    <None Include="HighscoreDataSet.xsc">
+      <DependentUpon>HighscoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HighscoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HighscoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HighscoreDataSet.xss">
+      <DependentUpon>HighscoreDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

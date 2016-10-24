@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console_Statki.Model
 {
-    class Highscore
+    public class Highscore
     {
         //public static void ShowHighscores()
         //{
@@ -17,9 +17,13 @@ namespace Console_Statki.Model
         //    Console.WriteLine("* śmietana");
         //    Console.WriteLine("* sól i pieprz do smaku");
         //}
-
-        public int Id { get; set; }
         public string Nickname { get; set; }
         public int Score { get; set; }
+
+        public Highscore(string nickname, int score)
+        {
+            Nickname = nickname;
+            Score = score;
+        }
     }
 }

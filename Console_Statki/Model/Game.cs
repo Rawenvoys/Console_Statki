@@ -6,6 +6,7 @@ using System.Windows;
 using System.Threading.Tasks;
 using Console_Statki.Helper;
 using System.Threading;
+using System.Data.SqlClient;
 
 
 namespace Console_Statki.Model
@@ -18,6 +19,7 @@ namespace Console_Statki.Model
             public int y { get; set; }
             public bool rotate { get; set; }
             public int size { get; set; }
+            
 
             public Ship(int size)
             {
@@ -37,6 +39,10 @@ namespace Console_Statki.Model
         public static bool turn = false;
         public static Coordinate playerHit;
         public static bool game = true;
+        public static int g1 = 0;//gracz 1 
+        public static int g2 = 0;//gracz 2 lub komputer
+        public static int state = 10;//stała premia
+        public static int combo = 1;
 
         public static void StartNewGame()
         {
@@ -64,9 +70,16 @@ namespace Console_Statki.Model
                     Methods.GameScreen(0, 0, eM);
 
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
+                    {
                         turn = false;
+                        g1 += state * combo;
+                        combo++;
+                    }
                     else
+                    {
                         turn = true;
+                        combo = 1;
+                    }
                 }
 
                 else
@@ -77,9 +90,16 @@ namespace Console_Statki.Model
                     Methods.GameScreen2(0, 0, pM, Const.COMPUTER_NICKNAME);
   
                     if (pM.playerMatrix[coordinate.X, coordinate.Y] == 999 || pM.playerMatrix[coordinate.X, coordinate.Y] == 321)
+                    {
                         turn = true;
+                        g2 += state * combo;
+                        combo++;
+                    }
                     else
+                    {
                         turn = false;
+                        combo = 1;
+                    }
                 }
 
                 if (defeat == true)
@@ -104,7 +124,9 @@ namespace Console_Statki.Model
                 {
                     game = false;
                     Methods.SetCursor(35, 16);
-                    Methods.ColorText(String.Format("Wygrał: {0}",Const.COMPUTER_NICKNAME)); 
+                    Methods.ColorText(String.Format("Wygrał: {0}",Const.COMPUTER_NICKNAME));
+                    DAL.HighscoreModel.InsertInto(Const.COMPUTER_NICKNAME, g2);
+
                 }
                 else
                 {
@@ -124,6 +146,7 @@ namespace Console_Statki.Model
                         game = false;
                         Methods.SetCursor(35, 16);
                         Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER1_NICKNAME));
+                        DAL.HighscoreModel.InsertInto(Variable.PLAYER1_NICKNAME, g1);
                         Console.Read();
                //MATKO JAKI PRL
                     }
@@ -162,23 +185,38 @@ namespace Console_Statki.Model
                 {
                     eM = Methods.PlaceBomb(eM);
                     Methods.GameScreen(0, 0, eM);
-            
+
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
+                    {
                         turn = false;
+                        g1 += state * combo;
+                        combo++;
+                    }
                     else
+                    {
                         turn = true;
+                        combo = 1;
+                    }
                 }
 
                 else
                 {
                     pM = Methods.PlaceBomb2(pM);
                     Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
-                   
-           
+
+
                     if (pM.playerMatrix[playerHit.X, playerHit.Y] == 999 || pM.playerMatrix[playerHit.X, playerHit.Y] == 321)
+                    {
                         turn = true;
+                        g2 += state * combo;
+                        combo++;
+
+                    }
                     else
+                    {
                         turn = false;
+                        combo = 1;
+                    }
                 }
 
 
@@ -198,6 +236,7 @@ namespace Console_Statki.Model
                     game = false;
                     Methods.SetCursor(35, 16);
                     Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER2_NICKNAME));
+                    DAL.HighscoreModel.InsertInto(Variable.PLAYER2_NICKNAME, g2);
                 }
                 else
                 {
@@ -217,6 +256,7 @@ namespace Console_Statki.Model
                         game = false;
                         Methods.SetCursor(35, 16);
                         Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER1_NICKNAME));
+                        DAL.HighscoreModel.InsertInto(Variable.PLAYER1_NICKNAME, g1);
                         Console.Read();
                         //MATKO JAKI PRL
                     }
