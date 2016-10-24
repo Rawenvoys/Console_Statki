@@ -17,8 +17,7 @@ namespace Console_Statki
         {
             Console.CursorVisible = false; 
 
-            //Main screen do przeniesienia
-   //  string connectionString="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\Cardsd.mdf";
+    
         
             //new SoundPlayer(@"d:\Music\imperial_march_long.wav").Play();
             Methods.ShowMenuScreen(Const.MENU_X, Const.MENU_Y, Messages.MENU_NEW_GAME);
@@ -72,15 +71,11 @@ namespace Console_Statki
                                 foreach (var h in highscore)
                                 {
                                     Console.Write("   " +i+ ". ");
-                                    Console.WriteLine("   "+   h.Nickname + "                           " + h.Score);
+                                    Console.WriteLine("   "+   h.Nickname);
+                                    Methods.SetCursor(39, 10 + i);
+                                    Console.WriteLine(h.Score);
                                     i++;
                                 }
-                                
-                                
-
-
-                                //Console.Read();
-                                //Console.Clear();
                                 //Console.Write(Messages.GIRL_PART1);
                                 //Console.Write(Messages.GIRL_PART2);
                                 Console.Read();

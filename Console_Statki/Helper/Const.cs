@@ -33,7 +33,6 @@ namespace Console_Statki.Helper
         public static int MENU_CONTROL_X = 37;
         public static int MENU_CONTROL_Y = 18;
         #endregion
-
         public static int NICKNAME1_X = 18;
         public static int NICKNAME1_Y = 3;
         public static int NICKNAME2_X = 60; //?
@@ -42,8 +41,7 @@ namespace Console_Statki.Helper
         public static int EM_Y = 5;
         public static int VS_X = 42; //?
         public static int VS_Y = 3;
-
-        public static string SELECT_ALL = "SELECT * FROM Winners ORDER BY Score ASC";
+        public static string SELECT_ALL = "SELECT * FROM Winners ORDER BY Score DESC";
 
 
        

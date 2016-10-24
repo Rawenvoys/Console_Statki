@@ -713,6 +713,117 @@ namespace Console_Statki.Helper
             }
         }
 
+        public static PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player) //prawdopodobnie czesc interfejsu
+        {
+            Game.Ship s = new Game.Ship(size);
+            int x = 23;
+            int y = 3;
+
+            pM = Game.SetShip(pM, s);
+
+            Methods.CreateScreen(pM, player);
+
+            Methods.SetCursor(23, 3);
+            while (true)
+            {
+                string selected = Console.ReadKey().Key.ToString();
+                if (selected == "Enter")
+                {
+                    if (!Game.CheckAllPosition(pM))
+                    {
+                        Methods.SetCursor(15, Const.MENU_CONTROL_Y + 10);
+                        Console.WriteLine(Messages.SET_ALERT);
+                        Methods.SetCursor(23, Const.MENU_CONTROL_Y + 11);
+                        Console.WriteLine(Messages.SET_ALERT2);
+                    }
+                    else
+                    {
+                        pM = Game.SuroundShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                        break;
+                    }
+                }
+                if (selected == "F1")
+                {
+                    if ((s.rotate == false && y + s.size - 1 < 13) || (s.rotate == true && x + s.size * 2 - 1 < 43))
+                    {
+                        Game.ClearShip(pM, s);
+                        s.rotate = !s.rotate;
+                        Game.SetShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                    }
+                    else
+                        Methods.CreateScreen(pM, player);
+                }
+                if (selected == "UpArrow")
+                {
+                    if (y > 3)
+                    {
+                        Game.ClearShip(pM, s);
+                        y--;
+                        s.y--;
+                        Game.SetShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                    }
+                    else
+                    {
+                        Methods.CreateScreen(pM, player);
+                    }
+                }
+                if (selected == "DownArrow")
+                {
+
+                    if ((y < 12 && s.rotate == false) || (s.rotate == true && y + s.size - 1 < 12))
+                    {
+                        Game.ClearShip(pM, s);
+                        y++;
+                        s.y++;
+                        Game.SetShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                    }
+                    else
+                    {
+                        Methods.CreateScreen(pM, player);
+                    }
+                }
+                if (selected == "RightArrow")
+                {
+
+                    if ((x < 41 && s.rotate == true) || (s.rotate == false && x + s.size * 2 - 1 < 41))
+                    {
+                        Game.ClearShip(pM, s);
+                        x += 2;
+                        s.x++;
+                        Game.SetShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                    }
+                    else
+                    {
+                        Methods.CreateScreen(pM, player);
+                    }
+                }
+                if (selected == "LeftArrow")
+                {
+
+                    if (x > 23)
+                    {
+                        Game.ClearShip(pM, s);
+                        x -= 2;
+                        s.x--;
+                        Game.SetShip(pM, s);
+                        Methods.CreateScreen(pM, player);
+                    }
+                    else
+                    {
+                        Methods.CreateScreen(pM, player);
+                    }
+                }
+            }
+
+
+            return pM;
+        }
+
     }
 
 

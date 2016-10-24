@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WLKx7ioZbnRYq3jCQiIlR08Dg6jRK3kFV96RZJ1p99M=</dsig:DigestValue>
+        <dsig:DigestValue>m0jNZ+DOr38Zm3e6IYci/1igVChkyGHtGkny2SD9rm4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9M8hW92kr8I4VsrNx2JUsdf1vmtOrbVj+/DW4+7xPxc=</dsig:DigestValue>
+      <dsig:DigestValue>ZdFVIpjG4OI15f18AA0QnnuBT3D9A3wqLQHp5x4RdP8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Data\Highscore_log.ldf" size="802816" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>XGzn0rhC5Jlhwg5ofpuhhdjGHDiqK2+ntvryoD367L0=</dsig:DigestValue>
+      <dsig:DigestValue>tfFxyx/8scbFd3Bj0DMS0npNQPTSCnzjZ9CHi9tK7Mg=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

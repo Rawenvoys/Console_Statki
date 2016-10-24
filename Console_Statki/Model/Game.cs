@@ -171,11 +171,11 @@ namespace Console_Statki.Model
 
 
 
-         
-            //PlaceShips(pM,true);
-            //PlaceShips(eM,false);
-            EnemyPlaceShips(eM);
-            EnemyPlaceShips(pM);
+
+            PlaceShips(pM, true);
+            PlaceShips(eM, false);
+            //EnemyPlaceShips(eM);
+            //EnemyPlaceShips(pM);
 
             Console.Clear();
             Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
@@ -237,6 +237,7 @@ namespace Console_Statki.Model
                     Methods.SetCursor(35, 16);
                     Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER2_NICKNAME));
                     DAL.HighscoreModel.InsertInto(Variable.PLAYER2_NICKNAME, g2);
+                    Console.Read();
                 }
                 else
                 {
@@ -277,22 +278,22 @@ namespace Console_Statki.Model
             Variable.JEDNOMASZTOWIEC = 4;
             for (int i = 1; i <= 1; i++)
             {
-                pM = PlaceShip(4, pM,player);
+                pM = Methods.PlaceShip(4, pM,player);
                 Variable.CZTEROMASZTOWCE = 1 - i;
             }
             for (int i = 1; i <= 2; i++)
             {
-                pM = PlaceShip(3, pM, player);
+                pM = Methods.PlaceShip(3, pM, player);
                 Variable.TRZYMASZTOWCE = 2 - i;
             }
             for (int i = 1; i <= 3; i++)
             {
-                pM = PlaceShip(2, pM, player);
+                pM = Methods.PlaceShip(2, pM, player);
                 Variable.DWUMASZTOWCE = 3 - i;
             }
             for (int i = 1; i <= 4; i++)
             {
-                pM = PlaceShip(1, pM, player);
+                pM = Methods.PlaceShip(1, pM, player);
                 Variable.JEDNOMASZTOWIEC = 4 - i;
             }
 
@@ -347,116 +348,116 @@ namespace Console_Statki.Model
             return pM;
         }
 
-        public static PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player) //prawdopodobnie czesc interfejsu
-        {
-            Ship s = new Ship(size);
-            int x = 23;
-            int y = 3;
+        //public static PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player) //prawdopodobnie czesc interfejsu
+        //{
+        //    Ship s = new Ship(size);
+        //    int x = 23;
+        //    int y = 3;
 
-            pM = SetShip(pM, s);
+        //    pM = SetShip(pM, s);
            
-            Methods.CreateScreen(pM,player);
+        //    Methods.CreateScreen(pM,player);
 
-            Methods.SetCursor(23, 3);
-            while (true)
-            {
-                string selected = Console.ReadKey().Key.ToString();
-                if (selected == "Enter")
-                {
-                    if (!CheckAllPosition(pM))
-                    {
-                        Methods.SetCursor(15, Const.MENU_CONTROL_Y+10);
-                        Console.WriteLine(Messages.SET_ALERT);
-                        Methods.SetCursor(23, Const.MENU_CONTROL_Y + 11);
-                        Console.WriteLine(Messages.SET_ALERT2);
-                    }
-                    else
-                    {
-                        pM = SuroundShip(pM, s);
-                        Methods.CreateScreen(pM,player);
-                        break;
-                    }
-                }
-                if (selected == "F1")
-                {
-                    if ((s.rotate == false && y + s.size - 1 < 13) || (s.rotate == true && x + s.size * 2 - 1 < 43))
-                    {
-                        ClearShip(pM, s);
-                        s.rotate = !s.rotate;
-                        SetShip(pM, s);
-                        Methods.CreateScreen(pM, player);
-                    }
-                    else
-                        Methods.CreateScreen(pM,player);
-                }
-                if (selected == "UpArrow")
-                {
-                    if (y > 3)
-                    {
-                        ClearShip(pM, s);
-                        y--;
-                        s.y--;
-                        SetShip(pM, s);
-                        Methods.CreateScreen(pM, player);
-                    }
-                    else
-                    {
-                        Methods.CreateScreen(pM, player);
-                    }
-                }
-                if (selected == "DownArrow")
-                {
+        //    Methods.SetCursor(23, 3);
+        //    while (true)
+        //    {
+        //        string selected = Console.ReadKey().Key.ToString();
+        //        if (selected == "Enter")
+        //        {
+        //            if (!CheckAllPosition(pM))
+        //            {
+        //                Methods.SetCursor(15, Const.MENU_CONTROL_Y+10);
+        //                Console.WriteLine(Messages.SET_ALERT);
+        //                Methods.SetCursor(23, Const.MENU_CONTROL_Y + 11);
+        //                Console.WriteLine(Messages.SET_ALERT2);
+        //            }
+        //            else
+        //            {
+        //                pM = SuroundShip(pM, s);
+        //                Methods.CreateScreen(pM,player);
+        //                break;
+        //            }
+        //        }
+        //        if (selected == "F1")
+        //        {
+        //            if ((s.rotate == false && y + s.size - 1 < 13) || (s.rotate == true && x + s.size * 2 - 1 < 43))
+        //            {
+        //                ClearShip(pM, s);
+        //                s.rotate = !s.rotate;
+        //                SetShip(pM, s);
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //            else
+        //                Methods.CreateScreen(pM,player);
+        //        }
+        //        if (selected == "UpArrow")
+        //        {
+        //            if (y > 3)
+        //            {
+        //                ClearShip(pM, s);
+        //                y--;
+        //                s.y--;
+        //                SetShip(pM, s);
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //            else
+        //            {
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //        }
+        //        if (selected == "DownArrow")
+        //        {
 
-                    if ((y < 12 && s.rotate == false) || (s.rotate == true && y + s.size - 1 < 12))
-                    {
-                        ClearShip(pM, s);
-                        y++;
-                        s.y++;
-                        SetShip(pM, s);
-                        Methods.CreateScreen(pM, player);
-                    }
-                    else
-                    {
-                        Methods.CreateScreen(pM, player);
-                    }
-                }
-                if (selected == "RightArrow")
-                {
+        //            if ((y < 12 && s.rotate == false) || (s.rotate == true && y + s.size - 1 < 12))
+        //            {
+        //                ClearShip(pM, s);
+        //                y++;
+        //                s.y++;
+        //                SetShip(pM, s);
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //            else
+        //            {
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //        }
+        //        if (selected == "RightArrow")
+        //        {
 
-                    if ((x < 41 && s.rotate == true) || (s.rotate == false && x + s.size * 2 - 1 < 41))
-                    {
-                        ClearShip(pM, s);
-                        x += 2;
-                        s.x++;
-                        SetShip(pM, s);
-                        Methods.CreateScreen(pM, player);
-                    }
-                    else
-                    {
-                        Methods.CreateScreen(pM, player);
-                    }
-                }
-                if (selected == "LeftArrow")
-                {
+        //            if ((x < 41 && s.rotate == true) || (s.rotate == false && x + s.size * 2 - 1 < 41))
+        //            {
+        //                ClearShip(pM, s);
+        //                x += 2;
+        //                s.x++;
+        //                SetShip(pM, s);
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //            else
+        //            {
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //        }
+        //        if (selected == "LeftArrow")
+        //        {
 
-                    if (x > 23)
-                    {
-                        ClearShip(pM, s);
-                        x -= 2;
-                        s.x--;
-                        SetShip(pM, s);
-                        Methods.CreateScreen(pM, player);
-                    }
-                    else
-                    {
-                        Methods.CreateScreen(pM, player);
-                    }
-                }
-            }
+        //            if (x > 23)
+        //            {
+        //                ClearShip(pM, s);
+        //                x -= 2;
+        //                s.x--;
+        //                SetShip(pM, s);
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //            else
+        //            {
+        //                Methods.CreateScreen(pM, player);
+        //            }
+        //        }
+        //    }
 
 
-            return pM;
-        }
+        //    return pM;
+        //}
 
         public static PlayerMatrix SetShip(PlayerMatrix pM, Ship s)
         {

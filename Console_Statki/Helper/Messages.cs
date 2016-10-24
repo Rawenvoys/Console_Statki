@@ -24,14 +24,12 @@ namespace Console_Statki.Helper
         public static string MENU_CLOSE =              "Zakończ grę                     ";
         public static string CONTROL = "STEROWANIE:";
         public static string CONTROLS = "Używaj \u2191 \u2190 \u2192 \u2193 aby wybrać pozycję do ostrzału. Zatwierdź ją klikając Enter\n&-Zatopiony \n*-Pudło \n$-Trafiony \n~-Nie Odkryte ";
-
         public static string CONTROLS_PLACE_SHIP_UP = "\u2191 - przemieść statek w górę";
         public static string CONTROLS_PLACE_SHIP_DOWN = "\u2193 - przemieść statek w dół";
         public static string CONTROLS_PLACE_SHIP_LEFT = "\u2190 - przemieść statek w lewo";
         public static string CONTROLS_PLACE_SHIP_RIGHT = "\u2192 - przemieść statek w prawo";
         public static string CONTROLS_PLACE_SHIP_F1 = "F1 - dokonaj rotacji o 90 stopni";
         public static string CONTROLS_PLACE_SHIP_ENTER = "ENTER - zatwierdź pozycję statku";
-
         public static string CONTROLS_GAME_UP = "\u2191 - ruch w górę";
         public static string CONTROLS_GAME_DOWN = "\u2193 - ruch w dół";
         public static string CONTROLS_GAME_LEFT = "\u2190 - ruch w lewo";
@@ -41,7 +39,6 @@ namespace Console_Statki.Helper
         public static string CONTROLS_GAME_STAR = "* - pudło";
         public static string CONTROLS_GAME_DOLAR = "$ - trafiony";
         public static string CONTROLS_GAME_ET = "& - zatiopiony";
-
         public static string GAME_SCREEN_ALERT = "Wystąpił błąd ekranu gry!"; 
         public static string MENU_ALERT = "Nie udało się poprawnie wyświetlić Menu";
         public static string SET_ALERT = "Ustawienie w tej pozycji statku jest rzeczą awykonalną!";
