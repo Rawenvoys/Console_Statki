@@ -8,14 +8,18 @@ namespace Console_Statki.Model
 {
     class Highscore
     {
-        public static void ShowHighscores()
-        {
-            Console.WriteLine("Przepis na jajecznice:");
-            Console.WriteLine("Składniki idealnej jajecznicy");
-            Console.WriteLine("* dobre jajka");
-            Console.WriteLine("* masło");
-            Console.WriteLine("* śmietana");
-            Console.WriteLine("* sól i pieprz do smaku");
-        }
+        //public static void ShowHighscores()
+        //{
+        //    Console.WriteLine("Przepis na jajecznice:");
+        //    Console.WriteLine("Składniki idealnej jajecznicy");
+        //    Console.WriteLine("* dobre jajka");
+        //    Console.WriteLine("* masło");
+        //    Console.WriteLine("* śmietana");
+        //    Console.WriteLine("* sól i pieprz do smaku");
+        //}
+
+        public int Id { get; set; }
+        public string Nickname { get; set; }
+        public int Score { get; set; }
     }
 }

@@ -72,6 +72,19 @@ namespace Console_Statki.Helper
             Console.Clear();
         }
 
+        public static void EnterNicknameP2()
+        {
+            Methods.SetCursor(0, 4);
+            Console.WriteLine(Messages.WELCOME_TEXT1);
+            Methods.SetCursor(33, 6);
+            Variable.PLAYER1_NICKNAME = Console.ReadLine();
+            Console.Clear();
+            Methods.SetCursor(0, 4);
+            Console.WriteLine(Messages.WELCOME_TEXT2);
+            Methods.SetCursor(33, 6);
+            Variable.PLAYER2_NICKNAME = Console.ReadLine();
+            Console.Clear();
+        }
         public static void SetCursor(int x, int y)
         {
             try
@@ -251,10 +264,13 @@ namespace Console_Statki.Helper
             //DA FAK
             try
             {
-                Console.Clear();
 
-                SetCursor(Const.NICKNAME1_X + (20 - Variable.PLAYER1_NICKNAME.Length) / 2 , Const.NICKNAME1_Y);
+
+                SetCursor(Const.NICKNAME1_X + (20 - Variable.PLAYER1_NICKNAME.Length) / 2, Const.NICKNAME1_Y);
                 Console.WriteLine(Variable.PLAYER1_NICKNAME);
+                SetCursor(Const.VS_X, Const.VS_Y);
+                Console.WriteLine("vs");
+
 
 
 
@@ -294,6 +310,36 @@ namespace Console_Statki.Helper
                     ColorPosition(x, y, pM);
                 }
 
+                SetCursor(Const.MENU_CONTROL_X + 1, Const.MENU_CONTROL_Y);
+                Console.WriteLine(Messages.CONTROL);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 1);
+                Console.WriteLine(Messages.CONTROLS_GAME_UP);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 2);
+                Console.WriteLine(Messages.CONTROLS_GAME_DOWN);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 3);
+                Console.WriteLine(Messages.CONTROLS_GAME_LEFT);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 4);
+                Console.WriteLine(Messages.CONTROLS_GAME_RIGHT);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 5);
+                Console.WriteLine(Messages.CONTROLS_GAME_ENTER);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 6);
+                Console.WriteLine(Messages.CONTROLS_GAME_TILDE);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 7);
+                Console.WriteLine(Messages.CONTROLS_GAME_STAR);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 8);
+                Console.WriteLine(Messages.CONTROLS_GAME_DOLAR);
+
+                SetCursor(Const.MENU_CONTROL_X - 2, Const.MENU_CONTROL_Y + 9);
+                Console.WriteLine(Messages.CONTROLS_GAME_ET);
+
 
 
 
@@ -315,25 +361,101 @@ namespace Console_Statki.Helper
             }
         }
 
+        public static void GameScreen2(int x, int y, PlayerMatrix pM, string nickname)
+        {
+            //DA FAK
+            try
+            {
+
+                int vector = 31;
+                SetCursor(Const.NICKNAME1_X + vector + (20 - nickname.Length) / 2, Const.NICKNAME1_Y);
+                Console.WriteLine(nickname);
+
+
+
+
+
+
+                SetCursor(Const.EM_X + vector, Const.EM_Y);
+                for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 10; j++)
+                    {
+                        if (pM.playerMatrix[i, j] == 999)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.Write("& ");
+                            Console.ResetColor();
+
+                        }
+                        else
+                            if (pM.playerMatrix[i, j] == 123)
+                                Console.Write("* ");
+                            else
+                                if (pM.playerMatrix[i, j] == 321)
+                                {
+                                    Console.BackgroundColor = ConsoleColor.Yellow;
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.Write("$ ");
+                                    Console.ResetColor();
+                                }
+                                else
+                                    Console.Write("~ ");
+                    }
+                    SetCursor(Const.EM_X + vector, Const.EM_Y + i + 1);
+                }
+                SetCursor(Const.EM_X + vector, Const.EM_Y);
+                if (x != 0 && y != 0)
+                {
+                    ColorPosition(x, y, pM);
+                }
+
+
+
+
+
+
+                //SetCursor(0, 50);
+                //for(int i=0 ;i<10;i++)  //pokazuje jak jest zapisana macierz w pamięci i jest chujowo po 1 strzale
+                //{
+                //    for(int j=0;j<10;j++)
+                //    {
+                //        Console.Write(pM.playerMatrix[i, j]);
+                //    }
+                //    Console.Write("\n");
+                //}
+            }
+            catch
+            {
+                Console.WriteLine(Messages.GAME_SCREEN_ALERT);
+            }
+        }
+
+
+
         public static PlayerMatrix PlaceBomb(PlayerMatrix pM)
         {
-            int x = Const.EM_X ;
+            int x = Const.EM_X;
             int trueX = Const.EM_X;
             int y = Const.EM_Y;
             ColorPosition(x, y, pM);
             GameScreen(x, y, pM);
-
+            Methods.SetCursor(26, Const.MENU_CONTROL_Y + 15);
+            Console.Write("                                                                                           ");
             Console.TreatControlCAsInput = true;
+
             while (true)
             {
+
                 string selected = Console.ReadKey().Key.ToString();
                 if (selected == "Enter")
                 {
                     if (pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 123 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 321 || pM.playerMatrix[y - Const.EM_Y, trueX - Const.EM_X] == 999)
                     {
-                        SetCursor(0,34);
+                        Methods.SetCursor(26, Const.MENU_CONTROL_Y + 15);
                         Console.Write(Messages.SET_BOMB_ALERT);
-                        SetCursor(y, x);
+
                     }
                     else
                     {
@@ -342,6 +464,7 @@ namespace Console_Statki.Helper
                         break;
                     }
                 }
+
                 if (selected == "UpArrow")
                 {
                     if (y > 5)

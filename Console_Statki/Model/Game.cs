@@ -50,16 +50,19 @@ namespace Console_Statki.Model
             PlaceShips(pM);
             EnemyPlaceShips(eM);
             Methods.CreateScreen(eM);
+
+            Console.Clear();
+            Methods.GameScreen2(0, 0, pM, Const.COMPUTER_NICKNAME);
             //W GAME SCREEN ZROBIC 2 OBRAZY
             while (game)
             {
+                Methods.GameScreen2(0, 0, pM, Const.COMPUTER_NICKNAME);
                 if (turn == false)
                 {
                     eM = Methods.PlaceBomb(eM);
            
                     Methods.GameScreen(0, 0, eM);
-                 //Tu były console.ready
-                    
+
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
                         turn = false;
                     else
@@ -71,9 +74,8 @@ namespace Console_Statki.Model
                     coordinate = eP.Shoot(hit, pM);
                     pM = ShootEnemy(pM, coordinate.X, coordinate.Y);
            
-                    Methods.GameScreen(0, 0, pM);
-                    //Tu były console.ready
-                    
+                    Methods.GameScreen2(0, 0, pM, Const.COMPUTER_NICKNAME);
+  
                     if (pM.playerMatrix[coordinate.X, coordinate.Y] == 999 || pM.playerMatrix[coordinate.X, coordinate.Y] == 321)
                         turn = true;
                     else
@@ -101,8 +103,8 @@ namespace Console_Statki.Model
                 if (count == 20)
                 {
                     game = false;
-                    Methods.SetCursor(28, 18);
-                    Console.Write("Komputer wygrał!!!!");
+                    Methods.SetCursor(35, 16);
+                    Methods.ColorText(String.Format("Wygrał: {0}",Const.COMPUTER_NICKNAME)); 
                 }
                 else
                 {
@@ -120,9 +122,9 @@ namespace Console_Statki.Model
                     if (count == 20)
                     {
                         game = false;
-                        Methods.SetCursor(28, 18);
-                        Console.Write(Variable.PLAYER1_NICKNAME);
-                        Console.Write(" wygrał!!!!");
+                        Methods.SetCursor(35, 16);
+                        Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER1_NICKNAME));
+               //MATKO JAKI PRL
                     }
 
 
@@ -138,18 +140,25 @@ namespace Console_Statki.Model
             PlayerMatrix eM = new PlayerMatrix();
             EnenemyPlans eP = new EnenemyPlans();
 
+            //NIE MAM POJECIA DLACZEGO DOUBLE ENTER
+            Methods.EnterNicknameP2();
+
+
+
+
+            //BUG Z ODSWIERZANIEM ILE ZOSTALO
             PlaceShips(pM);
-            Console.Read();
             PlaceShips(eM);
 
-            Console.Read();
+            Console.Clear();
+            Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
             while (game)
             {
                 if (turn == false)
                 {
                     eM = Methods.PlaceBomb(eM);
                     Methods.GameScreen(0, 0, eM);
-                    Console.Read();
+            
                     if (eM.playerMatrix[playerHit.X, playerHit.Y] == 999 || eM.playerMatrix[playerHit.X, playerHit.Y] == 321) //to nie działa
                         turn = false;
                     else
@@ -159,8 +168,8 @@ namespace Console_Statki.Model
                 else
                 {
                     pM = Methods.PlaceBomb(pM);
-                    Methods.GameScreen(0, 0, pM);
-                    Console.Read();
+                    Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
+           
                     if (pM.playerMatrix[playerHit.X, playerHit.Y] == 999 || pM.playerMatrix[playerHit.X, playerHit.Y] == 321)
                         turn = true;
                     else
@@ -215,7 +224,7 @@ namespace Console_Statki.Model
 
         public static PlayerMatrix PlaceShips(PlayerMatrix pM)
         {
-          
+           
             for (int i = 1; i <= 1; i++)
             {
                 pM = PlaceShip(4, pM);

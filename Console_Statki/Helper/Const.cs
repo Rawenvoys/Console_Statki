@@ -38,7 +38,7 @@ namespace Console_Statki.Helper
         public static int NICKNAME2_Y = 3;
         public static int EM_X = 18;
         public static int EM_Y = 5;
-        public static int VS_X = 40; //?
+        public static int VS_X = 42; //?
         public static int VS_Y = 3;
 
 

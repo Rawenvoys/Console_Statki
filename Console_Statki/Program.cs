@@ -31,7 +31,7 @@ namespace Console_Statki
                     {
                         Console.Clear();
                         Game.StartNewGame();
-                        Console.Read(); //Poki co to zostawiam.
+                        Console.Read();
                         break;
 
                     }
