@@ -14,15 +14,16 @@ namespace Console_Statki
     {
         public static void Main(string[] args)
         {
-            //Console.CursorVisible = false; //NA RAZIE
+            Console.CursorVisible = false; 
 
             //Main screen do przeniesienia
-            //Methods.ShowStartScreen();
-            //Const.PLAYER_NICKNAME = Console.ReadLine();
+   //  string connectionString="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\Cardsd.mdf";
+        
             //new SoundPlayer(@"d:\Music\imperial_march_long.wav").Play();
             Methods.ShowMenuScreen(Const.MENU_X, Const.MENU_Y, Messages.MENU_NEW_GAME);
             while (true)
             {
+                
                 string selected = Console.ReadKey().Key.ToString();
                 if (selected == "Enter")
                 {
@@ -32,7 +33,9 @@ namespace Console_Statki
                         Console.Clear();
                         Game.StartNewGame();
                         Console.Read();
-                        break;
+                        Console.Clear();
+                        Methods.ShowMenuScreen(Const.MENU_X, Const.MENU_Y, Messages.MENU_NEW_GAME);
+                      
 
                     }
                     else
@@ -41,19 +44,23 @@ namespace Console_Statki
                             Console.Clear();
                             Game.StartNewGame2Players();
                             Console.Read();
-                            break;
+                            Console.Clear();
+                            Methods.ShowMenuScreen(Const.MENU_X, Const.MENU_Y, Messages.MENU_NEW_GAME);
+                           
                         }
                         else
                             if (y == 14)
                             { //Szybko zrob to ;_;
                                 Console.Clear();
-                                Highscore.ShowHighscores();
+                               // Highscore.ShowHighscores();
                                 Console.Read();
                                 Console.Clear();
                                 Console.Write(Messages.GIRL_PART1);
                                 Console.Write(Messages.GIRL_PART2);
                                 Console.Read();
-                                break;
+                                Console.Clear();
+                                Methods.ShowMenuScreen(Const.MENU_X, Const.MENU_Y, Messages.MENU_NEW_GAME);
+                                
                             }
                             else
                                 if (y == 15)

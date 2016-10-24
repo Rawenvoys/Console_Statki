@@ -45,3 +45,16 @@ C:\Users\Student\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.
 C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
 C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
 C:\Users\Lucato\Desktop\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Data\Highscore.mdf
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Data\Highscore_log.ldf
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application

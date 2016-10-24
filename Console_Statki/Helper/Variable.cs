@@ -14,6 +14,9 @@ namespace Console_Statki.Helper
         public static int TRZYMASZTOWCE = 2;
         public static int DWUMASZTOWCE = 3;
         public static int JEDNOMASZTOWIEC = 4;
+        
+
+
 
     }
 }

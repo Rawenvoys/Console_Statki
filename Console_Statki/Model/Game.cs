@@ -47,9 +47,9 @@ namespace Console_Statki.Model
             Methods.EnterNicknameP1();
 
            
-            PlaceShips(pM);
+            PlaceShips(pM, true);
             EnemyPlaceShips(eM);
-            Methods.CreateScreen(eM);
+            Methods.CreateScreen(eM,true);
 
             Console.Clear();
             Methods.GameScreen2(0, 0, pM, Const.COMPUTER_NICKNAME);
@@ -124,9 +124,11 @@ namespace Console_Statki.Model
                         game = false;
                         Methods.SetCursor(35, 16);
                         Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER1_NICKNAME));
+                        Console.Read();
                //MATKO JAKI PRL
                     }
 
+                 
 
                 }
 
@@ -146,9 +148,11 @@ namespace Console_Statki.Model
 
 
 
-            //BUG Z ODSWIERZANIEM ILE ZOSTALO
-            PlaceShips(pM);
-            PlaceShips(eM);
+         
+            //PlaceShips(pM,true);
+            //PlaceShips(eM,false);
+            EnemyPlaceShips(eM);
+            EnemyPlaceShips(pM);
 
             Console.Clear();
             Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
@@ -167,8 +171,9 @@ namespace Console_Statki.Model
 
                 else
                 {
-                    pM = Methods.PlaceBomb(pM);
+                    pM = Methods.PlaceBomb2(pM);
                     Methods.GameScreen2(0, 0, pM, Variable.PLAYER2_NICKNAME);
+                   
            
                     if (pM.playerMatrix[playerHit.X, playerHit.Y] == 999 || pM.playerMatrix[playerHit.X, playerHit.Y] == 321)
                         turn = true;
@@ -191,8 +196,8 @@ namespace Console_Statki.Model
                 if (count == 20)
                 {
                     game = false;
-                    Methods.SetCursor(28, 18);
-                    Console.Write("2 Gracz wygrał!!!!");
+                    Methods.SetCursor(35, 16);
+                    Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER2_NICKNAME));
                 }
                 else
                 {
@@ -210,10 +215,12 @@ namespace Console_Statki.Model
                     if (count == 20)
                     {
                         game = false;
-                        Methods.SetCursor(28, 18);
-                        Console.Write(Variable.PLAYER1_NICKNAME);
-                        Console.Write(" wygrał!!!!");
+                        Methods.SetCursor(35, 16);
+                        Methods.ColorText(String.Format("Wygrał: {0}", Variable.PLAYER1_NICKNAME));
+                        Console.Read();
+                        //MATKO JAKI PRL
                     }
+
 
 
                 }
@@ -222,27 +229,30 @@ namespace Console_Statki.Model
             }
         }
 
-        public static PlayerMatrix PlaceShips(PlayerMatrix pM)
+        public static PlayerMatrix PlaceShips(PlayerMatrix pM, bool player)
         {
-           
+            Variable.CZTEROMASZTOWCE = 1;
+            Variable.TRZYMASZTOWCE = 2;
+            Variable.DWUMASZTOWCE = 3;
+            Variable.JEDNOMASZTOWIEC = 4;
             for (int i = 1; i <= 1; i++)
             {
-                pM = PlaceShip(4, pM);
+                pM = PlaceShip(4, pM,player);
                 Variable.CZTEROMASZTOWCE = 1 - i;
             }
             for (int i = 1; i <= 2; i++)
             {
-                pM = PlaceShip(3, pM);
+                pM = PlaceShip(3, pM, player);
                 Variable.TRZYMASZTOWCE = 2 - i;
             }
             for (int i = 1; i <= 3; i++)
             {
-                pM = PlaceShip(2, pM);
+                pM = PlaceShip(2, pM, player);
                 Variable.DWUMASZTOWCE = 3 - i;
             }
             for (int i = 1; i <= 4; i++)
             {
-                pM = PlaceShip(1, pM);
+                pM = PlaceShip(1, pM, player);
                 Variable.JEDNOMASZTOWIEC = 4 - i;
             }
 
@@ -297,14 +307,15 @@ namespace Console_Statki.Model
             return pM;
         }
 
-        public static PlayerMatrix PlaceShip(int size, PlayerMatrix pM) //prawdopodobnie czesc interfejsu
+        public static PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player) //prawdopodobnie czesc interfejsu
         {
             Ship s = new Ship(size);
             int x = 23;
             int y = 3;
 
             pM = SetShip(pM, s);
-            Methods.CreateScreen(pM);
+           
+            Methods.CreateScreen(pM,player);
 
             Methods.SetCursor(23, 3);
             while (true)
@@ -322,7 +333,7 @@ namespace Console_Statki.Model
                     else
                     {
                         pM = SuroundShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM,player);
                         break;
                     }
                 }
@@ -333,10 +344,10 @@ namespace Console_Statki.Model
                         ClearShip(pM, s);
                         s.rotate = !s.rotate;
                         SetShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                     else
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM,player);
                 }
                 if (selected == "UpArrow")
                 {
@@ -346,11 +357,11 @@ namespace Console_Statki.Model
                         y--;
                         s.y--;
                         SetShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                     else
                     {
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                 }
                 if (selected == "DownArrow")
@@ -362,11 +373,11 @@ namespace Console_Statki.Model
                         y++;
                         s.y++;
                         SetShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                     else
                     {
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                 }
                 if (selected == "RightArrow")
@@ -378,11 +389,11 @@ namespace Console_Statki.Model
                         x += 2;
                         s.x++;
                         SetShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                     else
                     {
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                 }
                 if (selected == "LeftArrow")
@@ -394,11 +405,11 @@ namespace Console_Statki.Model
                         x -= 2;
                         s.x--;
                         SetShip(pM, s);
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                     else
                     {
-                        Methods.CreateScreen(pM);
+                        Methods.CreateScreen(pM, player);
                     }
                 }
             }
