@@ -11,7 +11,7 @@ namespace Console_Statki.Model.DAL
     {
         public static SqlConnection Connection()
         {
-            string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Kacper\Source\Repos\Console_Statki\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
+            string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(str);
             return conn;
         }
