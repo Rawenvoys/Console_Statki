@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="80896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="80384">
       <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J/JhXzWaAysJ0YXmVRKQHdMTcvKeVkJ5eNB44rD1HvQ=</dsig:DigestValue>
+        <dsig:DigestValue>TCURFNO3cb4481HhCkaWwF+YTyT3S43x35g08IVUJoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Console_Statki.exe.config" size="555">
+  <file name="Console_Statki.exe.config" size="729">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pl1zcPdHwUpEOe8LFQez06AHl5DTeSzQDbt2SnNRP2U=</dsig:DigestValue>
+      <dsig:DigestValue>t1rjrrDxafWnmesxE9a2sYbl8pnjdoQWsvqpwu2gkRo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Data\Highscore.mdf" size="3211264" writeableType="applicationData">

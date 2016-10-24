@@ -71,3 +71,16 @@ C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_St
 C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
 C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
 C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.config
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.pdb
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Data\Highscore.mdf
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Data\Highscore_log.ldf
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe.manifest
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.application
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.exe
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\bin\Debug\Console_Statki.pdb
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.csprojResolveAssemblyReference.cache
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.TrustInfo.xml
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.exe.manifest
+C:\Users\Lucato\Source\Repos\Console_Statki\Console_Statki\obj\Debug\Console_Statki.application

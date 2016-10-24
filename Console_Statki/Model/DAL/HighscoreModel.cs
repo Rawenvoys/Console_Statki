@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Console_Statki.Model.DAL
 {
@@ -11,8 +12,9 @@ namespace Console_Statki.Model.DAL
     {
         public static SqlConnection Connection()
         {
-            string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(str);
+            //string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Highscore.mdf"].ConnectionString);
+            //SqlConnection conn = new SqlConnection(str);
             return conn;
         }
 
