@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TCURFNO3cb4481HhCkaWwF+YTyT3S43x35g08IVUJoM=</dsig:DigestValue>
+        <dsig:DigestValue>nH42gR07/v3/BkdTplT05LCLwGp88BlYh/pkc6XiOnw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,6 +78,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>58w/wdWHYRQ7m7U7GKySET6vNISl9kOUHteuPj8FN/I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="woda.jpg" size="8535">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SzAusxC8T2GJu7K2M7UOKrbWYHgkVtZ3/M3wIso/DXU=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
