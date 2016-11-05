@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Console_Statki.Model
 {
-    class Game
+   public class Game
     {
         public class Ship
         {

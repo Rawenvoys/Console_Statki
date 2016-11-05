@@ -77,12 +77,12 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="0" Content="Rozpocznij nową grę z komputerem" Click="Button_Click" ></Button>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Content="Rozpocznij nową grę z 2 graczem" Click="Button_Click_1" ></Button>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="0" Content="Rozpocznij nową grę z komputerem" Click="NewGame1P" Height="53" VerticalAlignment="Top" ></Button>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Content="Rozpocznij nową grę z 2 graczem" Click="NewGame2P" ></Button>
             <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Content="Highscore" ></Button>
             <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Content="Zakończ" ></Button>
         </Grid> 
-        <Grid Name="PlaceShip" Visibility="Hidden">
+        <Grid Name="PlaceShipScreen" Visibility="Hidden">
             <Grid.RowDefinitions >
                 <RowDefinition Height="0.5*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
@@ -116,8 +116,14 @@
                
 
             </Grid.ColumnDefinitions>
-            
+            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Click="MoveShipLeft" >lewo</Button>
+            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="MoveShipRight" >prawo</Button>
+            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="MoveShipUp" >góra</Button>
+            <Button Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" Click="MoveShipDown" >dół</Button>
+            <Button Grid.Row="12" Grid.Column="8" Grid.ColumnSpan="2" Click="RotateShip" >rotacja</Button>
+            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" >zatwierdź</Button>
         </Grid>
+        
 
 
     </Grid>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console_Statki.Model
 {
-    class PlayerMatrix
+   public class PlayerMatrix
     {
         public int[,] playerMatrix { get; set; }
 
