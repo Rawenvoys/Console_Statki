@@ -9,6 +9,7 @@ using System.Threading;
 using System.Data.SqlClient;
 
 
+
 namespace Console_Statki.Model
 {
    public class Game

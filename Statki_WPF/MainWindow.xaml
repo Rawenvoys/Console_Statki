@@ -121,7 +121,7 @@
             <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="MoveShipUp" >góra</Button>
             <Button Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" Click="MoveShipDown" >dół</Button>
             <Button Grid.Row="12" Grid.Column="8" Grid.ColumnSpan="2" Click="RotateShip" >rotacja</Button>
-            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" >zatwierdź</Button>
+            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" Click="SetShipOnPlace" Name="AcceptButton">zatwierdź</Button>
         </Grid>
         
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Console_Statki.Model;
-using Console_Statki;
+using Statki_WPF.Helper;
 
 
 namespace Statki_WPF
@@ -38,54 +38,16 @@ namespace Statki_WPF
 
         private void NewGame1P(object sender, RoutedEventArgs e)
         {
-            
-            PlaceShip(4,  pM =new PlayerMatrix(), false);
+            Variable2.CZTEROMASZTOWCE = 0;
+            Variable2.TRZYMASZTOWCE = 2;
+            Variable2.DWUMASZTOWCE = 3;
+            Variable2.JEDNOMASZTOWIEC = 4;
+            PlaceShip(4, pM = new PlayerMatrix(), false);
             //Game.StartNewGame();
-           
+
         }
 
         private void NewGame2P(object sender, RoutedEventArgs e)
-        {
-            MainWindow1.Height = 600;
-            MainWindow1.Width = 600;
-            GridStart.Visibility = Visibility.Hidden;
-           PlaceShipScreen.Visibility = Visibility.Visible;
-           for (int i = 0; i < 10; i++)
-           {
-               for (int j = 0; j < 10; j++)
-               {
-                   gameBoard[i, j] = new Image
-                   {
-                       Source = imgWater,
-                       Stretch = Stretch.Fill
-                   };
-                   Grid.SetColumn(gameBoard[i, j], i+1);
-                   Grid.SetRow(gameBoard[i, j], j +1);
-                   PlaceShipScreen.Children.Add(gameBoard[i, j]);
-               }
-           }
-        }
-
-        public void EnterNicknameP1()
-        {
-            Player1Nickname p = new Player1Nickname();
-            p.ShowDialog();
-        }
-
-        public  PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player)
-        {
-            s = new Game.Ship(size);
-            
-           
-
-            pM = Game.SetShip(pM, s);
-            CreateScreen(pM);
-          
-            
-            return pM;
-        }
-
-        public  void CreateScreen(PlayerMatrix pM)
         {
             MainWindow1.Height = 600;
             MainWindow1.Width = 600;
@@ -95,7 +57,53 @@ namespace Statki_WPF
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    if (pM.playerMatrix[i, j] == 0 )
+                    gameBoard[i, j] = new Image
+                    {
+                        Source = imgWater,
+                        Stretch = Stretch.Fill
+                    };
+                    Grid.SetColumn(gameBoard[i, j], i + 1);
+                    Grid.SetRow(gameBoard[i, j], j + 1);
+                    PlaceShipScreen.Children.Add(gameBoard[i, j]);
+                }
+            }
+        }
+
+        public void EnterNicknameP1()
+        {
+            Player1Nickname p = new Player1Nickname();
+            p.ShowDialog();
+        }
+
+        public PlayerMatrix PlaceShip(int size, PlayerMatrix pM, bool player)
+        {
+            s = new Game.Ship(size);
+            pM = Game.SetShip(pM, s);
+            if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+            {
+                AcceptButton.IsEnabled = false;
+            }
+            else
+            {
+                AcceptButton.IsEnabled = true;
+            }
+            CreateScreen(pM);
+
+
+            return pM;
+        }
+
+        public void CreateScreen(PlayerMatrix pM)
+        {
+            MainWindow1.Height = 600;
+            MainWindow1.Width = 600;
+            GridStart.Visibility = Visibility.Hidden;
+            PlaceShipScreen.Visibility = Visibility.Visible;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (pM.playerMatrix[i, j] == 0)
                     {
                         gameBoard[i, j] = new Image
                         {
@@ -119,7 +127,7 @@ namespace Statki_WPF
                             Stretch = Stretch.Fill
                         };
                     }
-                    
+
 
                     Grid.SetColumn(gameBoard[i, j], i + 1);
                     Grid.SetRow(gameBoard[i, j], j + 1);
@@ -131,12 +139,20 @@ namespace Statki_WPF
 
         private void MoveShipRight(object sender, RoutedEventArgs e)
         {
-            if ((s.y < 9 && s.rotate == false) || (s.rotate == true && s.y + s.size  - 1 < 9))
+            if ((s.y < 9 && s.rotate == false) || (s.rotate == true && s.y + s.size - 1 < 9))
             {
                 Game.ClearShip(pM, s);
                 s.y++;
                 Game.SetShip(pM, s);
                 CreateScreen(pM);
+                if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+                {
+                    AcceptButton.IsEnabled = false;
+                }
+                else
+                {
+                    AcceptButton.IsEnabled = true;
+                }
             }
             else
             {
@@ -153,6 +169,14 @@ namespace Statki_WPF
                 s.y--;
                 Game.SetShip(pM, s);
                 CreateScreen(pM);
+                if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+                {
+                    AcceptButton.IsEnabled = false;
+                }
+                else
+                {
+                    AcceptButton.IsEnabled = true;
+                }
             }
             else
             {
@@ -169,6 +193,14 @@ namespace Statki_WPF
                 s.x--;
                 Game.SetShip(pM, s);
                 CreateScreen(pM);
+                if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+                {
+                    AcceptButton.IsEnabled = false;
+                }
+                else
+                {
+                    AcceptButton.IsEnabled = true;
+                }
             }
             else
             {
@@ -179,12 +211,20 @@ namespace Statki_WPF
 
         private void MoveShipDown(object sender, RoutedEventArgs e)
         {
-            if ((s.x < 9&& s.rotate == true) || (s.rotate == false && s.x + s.size - 1 < 9))
+            if ((s.x < 9 && s.rotate == true) || (s.rotate == false && s.x + s.size - 1 < 9))
             {
                 Game.ClearShip(pM, s);
                 s.x++;
                 Game.SetShip(pM, s);
                 CreateScreen(pM);
+                if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+                {
+                    AcceptButton.IsEnabled = false;
+                }
+                else
+                {
+                    AcceptButton.IsEnabled = true;
+                }
             }
             else
             {
@@ -195,18 +235,61 @@ namespace Statki_WPF
 
         private void RotateShip(object sender, RoutedEventArgs e)
         {
-            if ((s.rotate == false && s.y + s.size - 1 <= 9) || (s.rotate == true && s.x + s.size  - 1 <= 9))
+            if ((s.rotate == false && s.y + s.size - 1 <= 9) || (s.rotate == true && s.x + s.size - 1 <= 9))
+            {
+                Game.ClearShip(pM, s);
+                s.rotate = !s.rotate;
+                Game.SetShip(pM, s);
+                CreateScreen(pM);
+                if (!Game.CheckAllPosition(pM)) // jeżeli okazuje się że są nakładki
+                {
+                    AcceptButton.IsEnabled = false;
+                }
+                else
+                {
+                    AcceptButton.IsEnabled = true;
+                }
+            }
+            else
+                CreateScreen(pM);
+        }
+
+        private void SetShipOnPlace(object sender, RoutedEventArgs e)
+        {
+            if (Variable2.TRZYMASZTOWCE > 0)
+            {
+                pM = Game.SuroundShip(pM, s);
+                Variable2.TRZYMASZTOWCE--;
+                PlaceShip(3, pM, false);
+            }
+            else
+            {
+                if (Variable2.DWUMASZTOWCE > 0)
+                {
+                    pM = Game.SuroundShip(pM, s);
+                    Variable2.DWUMASZTOWCE--;
+                    PlaceShip(2, pM, false);
+                }
+                else
+                {
+                    if (Variable2.JEDNOMASZTOWIEC > 0)
                     {
-                        Game.ClearShip(pM, s);
-                        s.rotate = !s.rotate;
-                        Game.SetShip(pM, s);
-                       CreateScreen(pM);
+                        pM = Game.SuroundShip(pM, s);
+                        Variable2.JEDNOMASZTOWIEC--;
+                        PlaceShip(1, pM, false);
                     }
                     else
-                        CreateScreen(pM);
+                    {
+                        pM = Game.SuroundShip(pM, s);
+                        //zaczynamy gre trzeba podmienić grida na tego do gry
+                    }
                 }
+            }
         }
+    }
+
+    
 }
 
-        
-    
+
+
