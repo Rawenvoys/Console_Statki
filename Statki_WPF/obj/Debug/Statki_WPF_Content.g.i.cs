@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("miss.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pointer.jpg")]
 
 

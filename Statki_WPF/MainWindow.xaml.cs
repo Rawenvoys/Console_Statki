@@ -26,10 +26,16 @@ namespace Statki_WPF
         static ImageSource imgWater = new BitmapImage(new Uri("water.gif", UriKind.RelativeOrAbsolute));
         static ImageSource imgHit = new BitmapImage(new Uri("ogień.gif", UriKind.RelativeOrAbsolute));
         static ImageSource imgMiss = new BitmapImage(new Uri("miss.jpg", UriKind.RelativeOrAbsolute));
+        static ImageSource imgPointer = new BitmapImage(new Uri("pointer.jpg", UriKind.RelativeOrAbsolute));
         public Image[,] gameBoard = new Image[10, 10];
         public Image[,] gameBoard1 = new Image[10, 10];
+        public Image[,] gameBoard2 = new Image[10, 10];
         Game.Ship s;
         PlayerMatrix pM;
+        PlayerMatrix eM = new PlayerMatrix();
+        int x = 0;
+        int y = 0;
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -281,11 +287,245 @@ namespace Statki_WPF
                     else
                     {
                         pM = Game.SuroundShip(pM, s);
+                        Game.EnemyPlaceShips(eM);
+                        GameScreen();
                         //zaczynamy gre trzeba podmienić grida na tego do gry
                     }
                 }
             }
         }
+
+        public void GameScreen()
+        {
+            MainWindow1.Height = 800;
+            MainWindow1.Width = 800;
+            Grid1.Visibility = Visibility.Visible;
+            PlaceShipScreen.Visibility = Visibility.Hidden;
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                  /*  if (pM.playerMatrix[i, j] == 0)
+                    {*/
+                        gameBoard1[i, j] = new Image
+                        {
+                            Source = imgWater,  // zero znaczy nic tu nie ma woda
+                            Stretch = Stretch.Fill
+                        };
+                   /* }
+                  else if (pM.playerMatrix[i, j] == 123)
+                    {
+                        gameBoard1[i, j] = new Image
+                        {
+                            Source = imgMiss,  //jeżeli to 123 to tu nie można stawiać bo już spudłowano
+                            Stretch = Stretch.Fill
+                        };
+                    }
+                    else
+                    {
+                        gameBoard1[i, j] = new Image
+                        {
+                            Source = imgHit,        //jeżeli nie jest 9  ani 0 to jest to statek na razie ogien bo brak rys statku
+                            Stretch = Stretch.Fill
+                        };
+                    }*/
+
+
+                    Grid.SetColumn(gameBoard1[i, j], i + 1);
+                    Grid.SetRow(gameBoard1[i, j], j + 1);
+                    Grid1.Children.Add(gameBoard1[i, j]);
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                   /* if (eM.playerMatrix[i, j] == 0)
+                    {*/
+                        gameBoard2[i, j] = new Image
+                        {
+                            Source = imgWater,  // zero znaczy nic tu nie ma woda
+                            Stretch = Stretch.Fill
+                        };
+                 /*   }
+                    else if (eM.playerMatrix[i, j] == 9)
+                    {
+                        gameBoard2[i, j] = new Image
+                        {
+                            Source = imgMiss,  //jeżeli to 9 to tu nie można stawiać 
+                            Stretch = Stretch.Fill
+                        };
+                    }
+                    else
+                    {
+                        gameBoard2[i, j] = new Image
+                        {
+                            Source = imgHit,        //jeżeli nie jest 9  ani 0 to jest to statek na razie ogien bo brak rys statku
+                            Stretch = Stretch.Fill
+                        };
+                    }
+                    */
+
+                    Grid.SetColumn(gameBoard2[i, j], i + 12);
+                    Grid.SetRow(gameBoard2[i, j], j + 1);
+                    Grid1.Children.Add(gameBoard2[i, j]);
+                }
+            }
+
+            // tu pierwszo ustawić celownik
+            eM.playerMatrix[x, y] += 1000;
+            gameBoard1[x, y].Source = imgPointer;
+        }
+
+        private void PointerGoUp(object sender, RoutedEventArgs e)
+        {
+            if(y > 0)
+            {
+                eM.playerMatrix[x, y] -= 1000;
+                y--;
+                eM.playerMatrix[x, y] += 1000;
+                gameBoard1[x, y].Source = imgPointer;
+                if( eM.playerMatrix[x, y+1]==123)
+                {
+                    gameBoard1[x, y + 1].Source = imgMiss;
+                }
+                if (eM.playerMatrix[x, y + 1] == 321)
+                {
+                    gameBoard1[x, y + 1].Source = imgHit;
+                }
+                if (eM.playerMatrix[x, y + 1] == 999)
+                {
+                    gameBoard1[x, y + 1].Source = imgHit;
+                }
+                else
+                {
+                    gameBoard1[x, y + 1].Source = imgWater;
+                }
+                if (eM.playerMatrix[x, y] == 1000 || eM.playerMatrix[x, y] == 1009 || eM.playerMatrix[x, y] == 1001 || eM.playerMatrix[x, y] == 1003 || eM.playerMatrix[x, y] == 1005 || eM.playerMatrix[x, y] == 1007)
+                {
+                    ApprovedShot.IsEnabled = true;
+                }
+                else
+                {
+                    ApprovedShot.IsEnabled = false;
+                }
+                
+            }
+            
+        }   //poruszania wskaznikiem strzalu
+
+        private void PointerGoDown(object sender, RoutedEventArgs e)
+        {
+            if (y < 9)
+            {
+                eM.playerMatrix[x, y] -= 1000;
+                y++;
+                eM.playerMatrix[x, y] += 1000;
+                gameBoard1[x, y].Source = imgPointer;
+                if (eM.playerMatrix[x, y - 1] == 123)
+                {
+                    gameBoard1[x, y - 1].Source = imgMiss;
+                }
+                if (eM.playerMatrix[x, y - 1] == 321)
+                {
+                    gameBoard1[x, y - 1].Source = imgHit;
+                }
+                if (eM.playerMatrix[x, y - 1] == 999)
+                {
+                    gameBoard1[x, y - 1].Source = imgHit;
+                }
+                else
+                {
+                    gameBoard1[x, y - 1].Source = imgWater;
+                }
+                if (eM.playerMatrix[x, y] == 1000 || eM.playerMatrix[x, y] == 1009 || eM.playerMatrix[x, y] == 1001 || eM.playerMatrix[x, y] == 1003 || eM.playerMatrix[x, y] == 1005 || eM.playerMatrix[x, y] == 1007)
+                {
+                    ApprovedShot.IsEnabled = true;
+                }
+                else
+                {
+                    ApprovedShot.IsEnabled = false;
+                }
+                
+            }
+        } //to co wyzej 
+
+        private void PointerGoLeft(object sender, RoutedEventArgs e)
+        {
+            if (x > 0)
+            {
+                eM.playerMatrix[x, y] -= 1000;
+                x--;
+                eM.playerMatrix[x, y] += 1000;
+                gameBoard1[x, y].Source = imgPointer;
+                if (eM.playerMatrix[x +1, y] == 123)
+                {
+                    gameBoard1[x +1, y ].Source = imgMiss;
+                }
+                if (eM.playerMatrix[x +1, y ] == 321)
+                {
+                    gameBoard1[x + 1, y ].Source = imgHit;
+                }
+                if (eM.playerMatrix[x +1, y ] == 999)
+                {
+                    gameBoard1[x +1, y ].Source = imgHit;
+                }
+                else
+                {
+                    gameBoard1[x +1, y ].Source = imgWater;
+                }
+                if (eM.playerMatrix[x, y] == 1000 || eM.playerMatrix[x, y] == 1009 || eM.playerMatrix[x, y] == 1001 || eM.playerMatrix[x, y] == 1003 || eM.playerMatrix[x, y] == 1005 || eM.playerMatrix[x, y] == 1007)
+                {
+                    ApprovedShot.IsEnabled = true;
+                }
+                else
+                {
+                    ApprovedShot.IsEnabled = false;
+                }
+               
+            }
+        } //to co wyzej 
+
+        private void PointerGoRight(object sender, RoutedEventArgs e)
+        {
+
+            if (x < 9)
+            {
+                eM.playerMatrix[x, y] -= 1000;
+                x++;
+                eM.playerMatrix[x, y] += 1000;
+                gameBoard1[x, y].Source = imgPointer;
+                if (eM.playerMatrix[x -1, y ] == 123)
+                {
+                    gameBoard1[x-1, y ].Source = imgMiss;
+                }
+                if (eM.playerMatrix[x -1, y ] == 321)
+                {
+                    gameBoard1[x-1, y ].Source = imgHit;
+                }
+                if (eM.playerMatrix[x-1, y ] == 999)
+                {
+                    gameBoard1[x-1, y].Source = imgHit;
+                }
+                else
+                {
+                    gameBoard1[x -1, y ].Source = imgWater;
+                }
+                if (eM.playerMatrix[x, y] == 1000 || eM.playerMatrix[x, y] == 1009 || eM.playerMatrix[x, y] == 1001 || eM.playerMatrix[x, y] == 1003 || eM.playerMatrix[x, y] == 1005 || eM.playerMatrix[x, y] == 1007)
+                {
+                    ApprovedShot.IsEnabled = true;
+                }
+                else
+                {
+                    ApprovedShot.IsEnabled = false;
+                }
+               
+               
+
+            }
+        } //to co wyzej 
     }
 
     

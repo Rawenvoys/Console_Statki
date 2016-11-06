@@ -52,9 +52,17 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
 
 
             </Grid.ColumnDefinitions>
+            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Click="PointerGoUp"  >góra</Button>
+            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="PointerGoDown"  >dół</Button>
+            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="PointerGoLeft" >lewo</Button>
+            <Button Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" Click="PointerGoRight"  >prawo</Button>
+            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" Name="ApprovedShot">zatwierdź</Button>
+
         </Grid>
         <Grid Name="GridStart" Visibility="Visible"  >
             <Grid.RowDefinitions>
