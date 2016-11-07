@@ -7,7 +7,7 @@ using Console_Statki.Model;
 
 namespace Console_Statki.Model
 {
-    class EnenemyPlans
+  public  class EnenemyPlans
     {
         public static int Point { get; set; }
         //public static int[] State { get; set; }

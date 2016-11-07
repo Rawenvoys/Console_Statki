@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console_Statki.Helper
 {
-    class Variable
+   public class Variable
     {
         public static string PLAYER1_NICKNAME;
         public static string PLAYER2_NICKNAME;

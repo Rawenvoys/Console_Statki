@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Statki_WPF.Player1Nickname"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Imię Pierwszego Gracza" Height="150" Width="300">
+        Title="Imię Pierwszego Gracza" Height="150" Width="300"
+        Icon="Shipicon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -11,10 +12,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox Margin="5,15,5,15" Grid.Column="1" ></TextBox>
-        <Label Margin="5,15,5,15">Imie pierwszego gracza</Label>
-        <Button Margin="5,15,5,15" Grid.Row="1">Zatwierdź</Button>
-        <Button Margin="5,15,5,15" Grid.Column="1" Grid.Row="1">Anuluj</Button>
+        <TextBox Margin="5,15,5,15" Grid.Column="1" TextChanged="TextBox_TextChanged"  Name="text"></TextBox>
+        <Label Margin="5,15,5,15" Name="label123">Imie pierwszego gracza</Label>
+        <Button Margin="5,15,5,15" Grid.Row="1" Name="zatwierdz" IsEnabled="False" Click="zatwierdz_Click">Zatwierdź</Button>
+        <Button Margin="5,15,5,15" Grid.Column="1" Grid.Row="1" Click="Button_Click">Anuluj</Button>
         
     </Grid>
 </Window>

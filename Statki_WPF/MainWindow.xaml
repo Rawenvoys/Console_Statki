@@ -1,11 +1,41 @@
 ﻿<Window x:Class="Statki_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="300" Width="400" 
+        Title="BattleShips" Height="450" Width="600" 
+        Icon="Shipicon.ico"
         Name="MainWindow1"> <!--Height="300" Width="400" startowe--> 
         
     
     <Grid>
+        <Grid Name="GridStart" Visibility="Visible"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2.4*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="1" Content="Rozpocznij nową grę z komputerem" Click="NewGame1P" ></Button>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Content="Rozpocznij nową grę z 2 graczem" Click="NewGame2P" ></Button>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Content="Highscore" Click="HighScoreButton"  ></Button>
+            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="8" Content="Zakończ" Click="ButtonClose" ></Button>
+        </Grid> 
         <Grid Margin="0,0,-8,-2" Name="Grid1" Visibility="Hidden">
             <Grid.RowDefinitions >
                 <RowDefinition Height="1*"></RowDefinition>
@@ -22,12 +52,6 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -57,39 +81,17 @@
 
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Click="PointerGoUp"  >góra</Button>
-            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="PointerGoDown"  >dół</Button>
-            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="PointerGoLeft" >lewo</Button>
-            <Button Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" Click="PointerGoRight"  >prawo</Button>
-            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" Name="ApprovedShot">zatwierdź</Button>
+            <Button Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2" Click="PointerGoUp"  Name="pointerUp">góra</Button>
+            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="PointerGoDown" Name="pointerDown"  >dół</Button>
+            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Click="PointerGoLeft" Name="pointerLeft">lewo</Button>
+            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="PointerGoRight"  Name="pointerRight">prawo</Button>
+            <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" Name="ApprovedShot" Click="ApprovedShotGo">zatwierdź</Button>
+            <Button Grid.Row="13" Grid.ColumnSpan="2" Name="EndGameButton" Visibility="Hidden" Click="GoToMenu" > Przejdź do menu</Button>
+            <Label Grid.Row="13" Grid.Column="4" Grid.ColumnSpan="4" Name="EndScore" Visibility="Hidden"></Label>
+            <Label Grid.Column="5" Grid.ColumnSpan="3" Name="p1Name"></Label>
+            <Label Grid.Column="16" Grid.ColumnSpan="3" Name="p2Name"></Label>
 
         </Grid>
-        <Grid Name="GridStart" Visibility="Visible"  >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="0.3*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="0.3*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="0.5*"></RowDefinition>
-                <RowDefinition></RowDefinition>
-                
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="0" Content="Rozpocznij nową grę z komputerem" Click="NewGame1P" Height="53" VerticalAlignment="Top" ></Button>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Content="Rozpocznij nową grę z 2 graczem" Click="NewGame2P" ></Button>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" Content="Highscore" ></Button>
-            <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Content="Zakończ" ></Button>
-        </Grid> 
         <Grid Name="PlaceShipScreen" Visibility="Hidden">
             <Grid.RowDefinitions >
                 <RowDefinition Height="0.5*"></RowDefinition>
@@ -125,11 +127,24 @@
 
             </Grid.ColumnDefinitions>
             <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Click="MoveShipLeft" >lewo</Button>
-            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="MoveShipRight" >prawo</Button>
-            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="MoveShipUp" >góra</Button>
-            <Button Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2" Click="MoveShipDown" >dół</Button>
+            <Button Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" Click="MoveShipRight" >prawo</Button>
+            <Button Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2" Click="MoveShipUp" >góra</Button>
+            <Button Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Click="MoveShipDown" >dół</Button>
             <Button Grid.Row="12" Grid.Column="8" Grid.ColumnSpan="2" Click="RotateShip" >rotacja</Button>
             <Button Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2" Click="SetShipOnPlace" Name="AcceptButton">zatwierdź</Button>
+        </Grid>
+        <Grid Name="HighscoreWindow" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"> </RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <ListBox Grid.Row="1" Name="Listbox">
+                
+            </ListBox>
+            <Button Grid.Row="2" Click="GoBack">Powrót</Button>
+            
         </Grid>
         
 

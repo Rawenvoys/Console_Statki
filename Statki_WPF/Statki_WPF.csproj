@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>shipicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,6 +125,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pointer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="highScores.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="wodaCelownik.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="statek.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="statekTrafiony.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="statekZatopiony.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="wodaCelownikpudlo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="trafionyCelownik.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="zatopionyCelownik.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="statekKolizja.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shipicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="battleship.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

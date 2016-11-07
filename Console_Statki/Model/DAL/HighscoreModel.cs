@@ -8,13 +8,14 @@ using System.Configuration;
 
 namespace Console_Statki.Model.DAL
 {
-    class HighscoreModel
+   public class HighscoreModel
     {
         public static SqlConnection Connection()
         {
-            //string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Student\Source\Repos\Console_Statki\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Highscore.mdf"].ConnectionString);
-            //SqlConnection conn = new SqlConnection(str);
+            //string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Kacper\Desktop\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
+           /* SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Highscore.mdf"].ConnectionString);*/  //nie działa teraz w wpf
+            string str = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Kacper\Source\Repos\Console_Statki2\Console_Statki\Data\Highscore.mdf;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(str);
             return conn;
         }
 

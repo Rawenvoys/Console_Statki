@@ -25,5 +25,11 @@ namespace Console_Statki.Model
             Nickname = nickname;
             Score = score;
         }
+        public override string ToString()
+        {
+
+            string ret= Nickname +" "+Score;
+            return ret;
+        }
     }
 }

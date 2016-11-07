@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="80384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Console_Statki.exe" size="80896">
       <assemblyIdentity name="Console_Statki" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IrzBN0UqyF87i4Wv/4QZg7AUitfEZRZjxXJXPFzCrHk=</dsig:DigestValue>
+        <dsig:DigestValue>GwhiiP3bO1EqKt9/rqS96Nb1ZZMPzRzq23oE1jnz02w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ol5jdA5hLT4FN6la+AP19yX2Txg1QIMZBI3MRmT34bo=</dsig:DigestValue>
+      <dsig:DigestValue>7T12H6kCrfpHsuSiaoCcVLcYOYuadgjkpVM6uQj2Ijs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Data\Highscore_log.ldf" size="802816" writeableType="applicationData">
@@ -77,7 +77,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>58w/wdWHYRQ7m7U7GKySET6vNISl9kOUHteuPj8FN/I=</dsig:DigestValue>
+      <dsig:DigestValue>RQcoqtBneV8D1+YYomAUmc9PQ1wx7Gsz1DCMvqxXHJ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="woda.jpg" size="8535">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SzAusxC8T2GJu7K2M7UOKrbWYHgkVtZ3/M3wIso/DXU=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
